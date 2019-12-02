@@ -10,6 +10,7 @@ public class sqliteConnection {
             return conn;
         } catch (Exception e) {
             return null;
+
         }
     }
 }
