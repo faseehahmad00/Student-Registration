@@ -2,18 +2,15 @@ package sample;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import org.w3c.dom.events.Event;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.util.zip.GZIPInputStream;
+
 
 public class Controller {
     @FXML
@@ -42,18 +39,9 @@ public class Controller {
     TextField cnic = new TextField();
     @FXML
     Text errormsg = new Text();
-@FXML
-    ComboBox<String> comboBox = new ComboBox<>();
 
-    public void setComboBox(ComboBox<String> comboBox) {
-        this.comboBox = comboBox;
-        comboBox.getItems().addAll("apple","mango","ORANGE");
-    }
-
-    public Controller() throws IOException {}
     Stage controlstage = new Stage();
-
-///LOGIN FORM START==================================================================================================
+//LOGIN FORM START==================================================================================================
         public void onexitclick () {
             Platform.exit();
         }
@@ -92,10 +80,6 @@ public class Controller {
             controlstage.setScene(new Scene(root));
             controlstage.show();
             controlstage.setFullScreen(true);
-        }
-        public void menucancel () {
-
-            Platform.exit();
         }
 //MENU BAR END==========================================================================================================
 
