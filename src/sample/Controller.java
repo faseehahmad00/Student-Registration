@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class Controller {
     @FXML
     TextField textField = new TextField();
     @FXML
-    TextField ID = new TextField();
+    Label label = new Label();
     @FXML
     TextField name = new TextField();
     @FXML
@@ -39,9 +40,12 @@ public class Controller {
     TextField cnic = new TextField();
     @FXML
     Text errormsg = new Text();
+    @FXML
+    Stage stagemenu = new Stage();
+    @FXML
+    Stage stagereg = new Stage();
 
-    Stage controlstage = new Stage();
-//LOGIN FORM START==================================================================================================
+//LOGIN FORM START======================================================================================================
         public void onexitclick () {
             Platform.exit();
         }
@@ -50,14 +54,16 @@ public class Controller {
             String passcode = "admin";
             String username = "admin";
             if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
-
-                System.out.println("login successfull");
-                //opening Registration form using login form
                 Parent root1 = FXMLLoader.load(getClass().getResource("menu.fxml"));
-                controlstage.setTitle("WELCOME TO STUDENT REGISTRATION");
-                controlstage.setScene(new Scene(root1));
-                controlstage.show();
-                controlstage.setFullScreen(true);
+                System.out.println("login successful");
+                //opening Registration form using login form
+                stagemenu.setTitle("WELCOME TO STUDENT REGISTRATION");
+                stagemenu.setScene(new Scene(root1));
+                stagemenu.initStyle(StageStyle.UNDECORATED);
+                stagemenu.show();
+
+                stagemenu.setFullScreen(true);
+
             } else if (textField.getText().isEmpty()) {
                 textField.setPromptText("Enter username");
             } else if (passwordField.getText().isEmpty()) {
@@ -74,26 +80,32 @@ public class Controller {
 ///MENU BAR START=======================================================================================================
         public void add () throws IOException {
             //opening Registration form using login form
-            controlstage.close();
+            stagemenu.close();
             Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
-            controlstage.setTitle("WELCOME TO STUDENT REGISTRATION");
-            controlstage.setScene(new Scene(root));
-            controlstage.show();
-            controlstage.setFullScreen(true);
+            stagereg.setTitle("WELCOME TO STUDENT REGISTRATION");
+            stagereg.setScene(new Scene(root));
+            stagereg.initStyle(StageStyle.UNDECORATED);
+            stagereg.show();
+            stagereg.setFullScreen(true);
+
+            label.setText("1");
         }
 //MENU BAR END==========================================================================================================
 
 //REGISTRATION FORM START===============================================================================================
         public void oncancel () throws IOException {
+            stagereg.close();
             Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-            controlstage.setTitle("WELCOME TO STUDENT REGISTRATION");
-            controlstage.setScene(new Scene(root));
-            controlstage.show();
-            controlstage.setFullScreen(true);
+            stagemenu.setTitle("WELCOME TO STUDENT REGISTRATION");
+            stagemenu.setScene(new Scene(root));
+            stagereg.initStyle(StageStyle.UNDECORATED);
+            stagemenu.show();
+            stagemenu.setFullScreen(true);
+
         }
 
         public void onsaveclicked () { //on pressing save button on registration form.
-            System.out.println(ID.getText());
+            System.out.println(label.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
             System.out.println(gender.getText());
