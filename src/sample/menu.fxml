@@ -26,7 +26,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <Label layoutX="39.0" layoutY="53.0" prefHeight="35.0" prefWidth="103.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Menu" textFill="DARKORANGE">
+      <Label layoutX="39.0" layoutY="65.0" prefHeight="35.0" prefWidth="103.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Menu" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -51,5 +51,10 @@
             <Font name="System Bold" size="55.0" />
          </font>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="1296.0" prefHeight="52.0" prefWidth="70.0" text="X" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
