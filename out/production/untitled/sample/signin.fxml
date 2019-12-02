@@ -12,12 +12,12 @@
    <children>
       <AnchorPane layoutX="528.0" layoutY="219.0" prefHeight="330.0" prefWidth="311.0">
          <children>
-            <JFXPasswordField fx:id="passwordField" focusColor="DARKORANGE" labelFloat="true" layoutX="16.0" layoutY="174.0" prefHeight="25.0" prefWidth="282.0" promptText="Password" style="-fx-text-fill: #ff8c00;" unFocusColor="WHITE">
+            <JFXPasswordField fx:id="passwordField" focusColor="DARKORANGE" labelFloat="true" layoutX="16.0" layoutY="174.0" prefHeight="25.0" prefWidth="282.0" promptText="Password" style="-fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXPasswordField>
-            <JFXTextField fx:id="textField" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="101.0" prefHeight="25.0" prefWidth="282.0" promptText="Username" style="-fx-text-fill: #ff8c00;" unFocusColor="WHITE">
+            <JFXTextField fx:id="textField" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="101.0" prefHeight="25.0" prefWidth="282.0" promptText="Username" style="-fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
