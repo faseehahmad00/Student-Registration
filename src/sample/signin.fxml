@@ -32,9 +32,9 @@
                   <Font name="Tahoma Bold" size="18.0" />
                </font>
             </Label>
-            <Text fx:id="errormsg" fill="DARKORANGE" layoutX="77.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="219.13671875">
+            <Text fx:id="errormsg" fill="DARKORANGE" layoutX="16.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="282.0">
                <font>
-                  <Font name="System Italic" size="12.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
          </children>
