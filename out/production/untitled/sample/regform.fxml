@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <Label layoutX="64.0" layoutY="65.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Add New Student" textFill="DARKORANGE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font></Label>
-      <JFXTextField focusColor="DARKORANGE" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="301.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" unFocusColor="WHITE" />
-      <JFXDatePicker defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" overLay="true" prefHeight="25.0" prefWidth="140.0" promptText="DOB" />
-      <JFXComboBox focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" unFocusColor="WHITE" />
-      <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Degree" unFocusColor="WHITE" />
-      <JFXButton buttonType="RAISED" layoutX="475.0" layoutY="683.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Enroll Now">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-      <JFXButton layoutX="683.0" layoutY="683.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Cancel">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></JFXButton>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <Label layoutX="75.0" layoutY="65.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Add New Student" textFill="DARKORANGE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Label>
+        <JFXTextField fx:id="name" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="phone" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="301.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXDatePicker fx:id="dob" defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" prefHeight="25.0" prefWidth="140.0" promptText="DOB" />
+        <JFXComboBox fx:id="gender" editable="true" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" unFocusColor="WHITE" />
+        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="email" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="address" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXTextField fx:id="degree" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Degree" unFocusColor="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXTextField>
+        <JFXButton buttonType="RAISED" layoutX="492.0" layoutY="683.0" onAction="#onsaveclicked" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Enroll Now">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+        <JFXButton layoutX="689.0" layoutY="683.0" onAction="#oncancel" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Cancel">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></JFXButton>
+    </children>
 </AnchorPane>

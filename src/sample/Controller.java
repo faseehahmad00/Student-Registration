@@ -1,4 +1,6 @@
 package sample;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -25,9 +27,9 @@ public class Controller {
     @FXML
     TextField address = new TextField();
     @FXML
-    TextField gender = new TextField();
+    JFXComboBox<String> gender = new JFXComboBox<String>();
     @FXML
-    TextField dob = new TextField();
+    JFXDatePicker dob = new JFXDatePicker();
     @FXML
     TextField degree = new TextField();
     @FXML
@@ -78,9 +80,7 @@ public class Controller {
             System.out.println(label.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
-            System.out.println(gender.getText());
             System.out.println(cnic.getText());
-            System.out.println(dob.getText());
             System.out.println(phone.getText());
             System.out.println(address.getText());
             System.out.println(degree.getText());
