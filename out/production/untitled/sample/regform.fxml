@@ -14,33 +14,33 @@
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Label>
-        <JFXTextField fx:id="name" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" unFocusColor="WHITE">
+        <JFXTextField fx:id="name" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" unFocusColor="WHITE">
+        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="phone" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="301.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" unFocusColor="WHITE">
+        <JFXTextField fx:id="phone" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="301.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXDatePicker fx:id="dob" defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" prefHeight="25.0" prefWidth="140.0" promptText="DOB" />
-        <JFXComboBox fx:id="gender" editable="true" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" unFocusColor="WHITE" />
-        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" unFocusColor="WHITE">
+        <JFXDatePicker fx:id="dob" defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" prefHeight="25.0" prefWidth="140.0" promptText="DOB" style="-fx-text-fill: white;" />
+        <JFXComboBox fx:id="gender" editable="true" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="email" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" unFocusColor="WHITE">
+        <JFXTextField fx:id="email" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="address" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" unFocusColor="WHITE">
+        <JFXTextField fx:id="address" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="degree" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Degree" unFocusColor="WHITE">
+        <JFXTextField fx:id="degree" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Degree" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
