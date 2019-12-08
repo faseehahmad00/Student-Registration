@@ -52,5 +52,10 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="1301.0" prefHeight="56.0" prefWidth="65.0" ripplerFill="WHITE" text="X" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
     </children>
 </AnchorPane>

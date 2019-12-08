@@ -11,8 +11,6 @@ import java.io.IOException;
 
 
 public class menucontrol extends Application {
-    Stage stagereg = new Stage();
-    Stage stagemenu = new Stage();
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
@@ -22,9 +20,6 @@ public class menucontrol extends Application {
         stage.show();
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
-    }
-    public void end(Stage stage){
-        stage.hide();
     }
 
 }

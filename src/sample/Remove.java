@@ -7,10 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class regcontrol extends Application {
+public class Remove extends Application {
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
         stage.setTitle("WELCOME TO STUDENT REGISTRATION");
         stage.setScene(new Scene(root));
         stage.initStyle(StageStyle.UNDECORATED);
@@ -18,5 +19,5 @@ public class regcontrol extends Application {
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
     }
-
 }
+

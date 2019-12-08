@@ -3,13 +3,19 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 public class Controller {
 
     regcontrol reg = new regcontrol();
     menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
+    Remove remove = new Remove();
     @FXML
     PasswordField passwordField = new PasswordField();
     @FXML
@@ -37,8 +43,12 @@ public class Controller {
     @FXML
     Text errormsg = new Text();
     @FXML
-    Stage stage = new Stage();
-    ;                                                         //buttons,textfiels etc
+//    static Stage stagemenu = new Stage();
+//    public Stage stagereg = new Stage();
+//    public Stage stagerem = new Stage();
+//    public Stage signin = new Stage();
+    static Stage stage = new Stage();
+    ;                                                        //buttons,textfiels etc
 
 
 //LOGIN FORM START======================================================================================================
@@ -48,6 +58,7 @@ public class Controller {
             String username = "admin";
             if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
                 System.out.println("login successful");
+                errormsg.setText("login Successful");
                 menu.start(stage);
             } else if (textField.getText().isEmpty()) {
                 textField.setPromptText("Enter username");
@@ -63,17 +74,26 @@ public class Controller {
 
 ///MENU BAR START=======================================================================================================
         public void add () throws Exception {
-            menu.end(stage);
             reg.start(stage);
+        }
+        public void delete () throws Exception{
+            remove.start(stage);
+        }
+        public void logout () throws Exception{
+            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+            stage.setTitle("WELCOME TO STUDENT REGISTRATION");
+            stage.setScene(new Scene(root));
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
+            stage.setFullScreen(true);
+
         }
 //MENU BAR END==========================================================================================================
 
 
 //REGISTRATION FORM START===============================================================================================
         public void oncancel () throws Exception {
-            reg.end(stage);
             menu.start(stage);
-
         }
 
         public void onsaveclicked () {                   //on pressing save button on registration form.

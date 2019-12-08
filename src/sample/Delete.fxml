@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Delete">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label layoutX="65.0" layoutY="73.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #ff8c00;" text="   Remove Student" textFill="DARKORANGE">
          <font>
@@ -30,14 +30,14 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="267.0" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Cancel">
+            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="267.0" onAction="#oncancel" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Cancel">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
          </children>
       </AnchorPane>
-      <JFXButton buttonType="RAISED" layoutX="1297.0" prefHeight="57.0" prefWidth="69.0" ripplerFill="WHITE" text="X" textFill="DARKORANGE">
+      <JFXButton buttonType="RAISED" layoutX="1297.0" onAction="#onexitclick" prefHeight="57.0" prefWidth="69.0" ripplerFill="WHITE" text="X" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
