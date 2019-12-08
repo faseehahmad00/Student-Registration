@@ -1,6 +1,7 @@
 package sample;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,11 +14,11 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class Controller {
-
+public class Controller{
     regcontrol reg = new regcontrol();
     menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
     Remove remove = new Remove();
+    signcontrol signin = new signcontrol();
     @FXML
     PasswordField passwordField = new PasswordField();
     @FXML
@@ -45,14 +46,8 @@ public class Controller {
     @FXML
     Text errormsg = new Text();
     @FXML
-//    static Stage stagemenu = new Stage();
-//    public Stage stagereg = new Stage();
-//    public Stage stagerem = new Stage();
-//    public Stage signin = new Stage();
-    static Stage stage = new Stage();
-    ;                                                        //buttons,textfiels etc
 
-
+    static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
         public void onexitclick () { Platform.exit(); }
         public void onclick () throws Exception {
@@ -96,13 +91,8 @@ public class Controller {
         }
         public void logout () throws Exception{
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
-                stage.setTitle("WELCOME TO STUDENT REGISTRATION");
-                stage.setScene(new Scene(root));
-                stage.initStyle(StageStyle.UNDECORATED);
-                stage.show();
-                stage.setFullScreen(true);
-            } catch (IOException e) {
+                signin.start(stage);
+            } catch (Exception e) {
                 System.out.println("new stage opened");
             }
 
@@ -129,6 +119,7 @@ public class Controller {
             System.out.println(degree.getText());
             System.out.println(email.getText());                                         //printing details on terminal.
         }
+
 //REGISTRATION FORM END=================================================================================================
 
     }
