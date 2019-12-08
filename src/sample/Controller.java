@@ -38,8 +38,7 @@ public class Controller{
     TextField cnic = new TextField();
     @FXML
     Text errormsg = new Text();
-    @FXML
-    Label enroll = new Label();
+   
 
     static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
@@ -111,10 +110,7 @@ public class Controller{
             System.out.println(phone.getText());
             System.out.println(address.getText());
             System.out.println(degree.getText());
-            System.out.println(email.getText());
-            //printing details on terminal.
-            label.setText("enrolled successfully");
-            stage.showAndWait();
+            System.out.println(email.getText());            //printing details on terminal.
             menu.start(stage);
         }
 
