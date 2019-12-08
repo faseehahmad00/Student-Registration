@@ -11,6 +11,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
+
 public class Controller {
 
     regcontrol reg = new regcontrol();
@@ -59,7 +61,12 @@ public class Controller {
             if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
                 System.out.println("login successful");
                 errormsg.setText("login Successful");
-                menu.start(stage);
+
+                try {
+                    menu.start(stage);
+                } catch (Exception e) {
+                    System.out.println("new stage opened");
+                }
             } else if (textField.getText().isEmpty()) {
                 textField.setPromptText("Enter username");
             } else if (passwordField.getText().isEmpty()) {
@@ -74,18 +81,30 @@ public class Controller {
 
 ///MENU BAR START=======================================================================================================
         public void add () throws Exception {
-            reg.start(stage);
+            try {
+                reg.start(stage);
+            } catch (Exception e) {
+                System.out.println("new stage opened");
+            }
         }
         public void delete () throws Exception{
-            remove.start(stage);
+            try {
+                remove.start(stage);
+            } catch (Exception e) {
+                System.out.println("new stage opened");
+            }
         }
         public void logout () throws Exception{
-            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
-            stage.setTitle("WELCOME TO STUDENT REGISTRATION");
-            stage.setScene(new Scene(root));
-            stage.initStyle(StageStyle.UNDECORATED);
-            stage.show();
-            stage.setFullScreen(true);
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+                stage.setTitle("WELCOME TO STUDENT REGISTRATION");
+                stage.setScene(new Scene(root));
+                stage.initStyle(StageStyle.UNDECORATED);
+                stage.show();
+                stage.setFullScreen(true);
+            } catch (IOException e) {
+                System.out.println("new stage opened");
+            }
 
         }
 //MENU BAR END==========================================================================================================
@@ -93,7 +112,11 @@ public class Controller {
 
 //REGISTRATION FORM START===============================================================================================
         public void oncancel () throws Exception {
-            menu.start(stage);
+            try {
+                menu.start(stage);
+            } catch (Exception e) {
+                System.out.println("new stage opened");
+            }
         }
 
         public void onsaveclicked () {                   //on pressing save button on registration form.

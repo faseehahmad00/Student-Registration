@@ -17,6 +17,7 @@ public class regcontrol extends Application {
         stage.show();
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
+
     }
 
 }
