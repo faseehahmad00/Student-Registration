@@ -20,7 +20,7 @@
                   <Font name="Tahoma Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="71.0" layoutY="329.0" text="&quot;Krtay hain Kuch.&quot;" textFill="DARKORANGE">
+            <Label layoutX="36.0" layoutY="329.0" text="&quot;KHARA HONA BAND HO GYA Bc &quot;" textFill="DARKORANGE">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Font name="Tahoma Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="12.0" layoutY="345.0" text="&quot;Talk is Cheap, show me the Code.&quot;" textFill="DARKORANGE">
+            <Label layoutX="12.0" layoutY="345.0" text="&quot;Talk is Cheap, show me the BOOb.&quot;" textFill="DARKORANGE">
                <font>
                   <Font name="System Bold Italic" size="18.0" />
                </font>

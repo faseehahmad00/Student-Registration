@@ -7,14 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.IOException;
-
-import static javafx.application.Application.launch;
-
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = null;
+        Parent root;
         root = FXMLLoader.load(getClass().getResource("signin.fxml"));
         primaryStage.setTitle("WELCOME TO STUDENT REGISTRATION");
         primaryStage.initStyle(StageStyle.UNDECORATED);

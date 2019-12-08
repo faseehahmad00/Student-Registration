@@ -1,18 +1,11 @@
 package sample;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-import java.io.IOException;
 
 public class Controller{
     regcontrol reg = new regcontrol();
@@ -36,7 +29,7 @@ public class Controller{
     @FXML
     TextField address = new TextField();
     @FXML
-    JFXComboBox<String> gender = new JFXComboBox<String>();
+    JFXComboBox<String> gender = new JFXComboBox<>();
     @FXML
     JFXDatePicker dob = new JFXDatePicker();
     @FXML
@@ -46,11 +39,12 @@ public class Controller{
     @FXML
     Text errormsg = new Text();
     @FXML
+    Label enroll = new Label();
 
     static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
         public void onexitclick () { Platform.exit(); }
-        public void onclick () throws Exception {
+        public void onclick () {
             String passcode = "admin";
             String username = "admin";
             if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
@@ -75,21 +69,21 @@ public class Controller{
 
 
 ///MENU BAR START=======================================================================================================
-        public void add () throws Exception {
+        public void add (){
             try {
                 reg.start(stage);
             } catch (Exception e) {
                 System.out.println("new stage opened");
             }
         }
-        public void delete () throws Exception{
+        public void delete () {
             try {
                 remove.start(stage);
             } catch (Exception e) {
                 System.out.println("new stage opened");
             }
         }
-        public void logout () throws Exception{
+        public void logout () {
             try {
                 signin.start(stage);
             } catch (Exception e) {
@@ -101,7 +95,7 @@ public class Controller{
 
 
 //REGISTRATION FORM START===============================================================================================
-        public void oncancel () throws Exception {
+        public void oncancel () {
             try {
                 menu.start(stage);
             } catch (Exception e) {
@@ -109,7 +103,7 @@ public class Controller{
             }
         }
 
-        public void onsaveclicked () {                   //on pressing save button on registration form.
+        public void onsaveclicked () throws Exception {                   //on pressing save button on registration form.
             System.out.println(label.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
@@ -117,9 +111,14 @@ public class Controller{
             System.out.println(phone.getText());
             System.out.println(address.getText());
             System.out.println(degree.getText());
-            System.out.println(email.getText());                                         //printing details on terminal.
+            System.out.println(email.getText());
+            //printing details on terminal.
+            label.setText("enrolled successfully");
+            stage.showAndWait();
+            menu.start(stage);
         }
 
 //REGISTRATION FORM END=================================================================================================
 
     }
+
