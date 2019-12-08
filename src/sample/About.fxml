@@ -1,8 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.About">
-
+   <children>
+      <AnchorPane layoutX="50.0" layoutY="208.0" prefHeight="400.0" prefWidth="320.0">
+         <children>
+            <ImageView fitHeight="132.0" fitWidth="140.0" layoutX="94.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/LRM_EXPORT_36235878677895_20190730_070822773.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="73.0" layoutY="175.0" text="AHMED SHABBIR" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="359.0" text="&quot;Krtay hain Kuch.&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="50.0" layoutY="45.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   About" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="143.0" layoutY="119.0" text="DESIGNER" textFill="DARKORANGE">
+         <font>
+            <Font name="Tahoma Bold" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="497.0" layoutY="208.0" prefHeight="400.0" prefWidth="320.0">
+         <children>
+            <Label layoutX="80.0" layoutY="175.0" text="FASEEH AHMAD" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="359.0" text="&quot;This Project Fucked Me.&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="564.0" layoutY="119.0" text="PROGRAMMER" textFill="DARKORANGE">
+         <font>
+            <Font name="Tahoma Bold" size="25.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="937.0" layoutY="208.0" prefHeight="400.0" prefWidth="320.0">
+         <children>
+            <Label layoutX="54.0" layoutY="175.0" text="ABDULLAH SHAHZAD" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="359.0" text="&quot;Talk is Cheap, show me the Code.&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="972.0" layoutY="119.0" text="PROJECT MANAGER" textFill="DARKORANGE">
+         <font>
+            <Font name="Tahoma Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
