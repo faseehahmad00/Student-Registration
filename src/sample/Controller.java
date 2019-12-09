@@ -2,12 +2,13 @@ package sample;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Controller{
+public class Controller<gender> {
     regcontrol reg = new regcontrol();
     menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
     Remove remove = new Remove();
@@ -29,8 +30,6 @@ public class Controller{
     @FXML
     TextField address = new TextField();
     @FXML
-    JFXComboBox<String> gender = new JFXComboBox<>();
-    @FXML
     JFXDatePicker dob = new JFXDatePicker();
     @FXML
     TextField degree = new TextField();
@@ -38,14 +37,16 @@ public class Controller{
     TextField cnic = new TextField();
     @FXML
     Text errormsg = new Text();
-   
+    @FXML
+    JFXComboBox<String> genderselect = new JFXComboBox(FXCollections.observableArrayList("male",
+            "female","rather not say"));
 
     static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
         public void onexitclick () { Platform.exit(); }
         public void onclick () {
-            String passcode = "admin";
-            String username = "admin";
+            String passcode = "";
+            String username = "";
             if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
                 System.out.println("login successful");
                 errormsg.setText("login Successful");
