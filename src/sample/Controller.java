@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Controller<gender> {
+public class Controller {
     regcontrol reg = new regcontrol();
     menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
     Remove remove = new Remove();
@@ -38,8 +38,8 @@ public class Controller<gender> {
     @FXML
     Text errormsg = new Text();
     @FXML
-    JFXComboBox<String> genderselect = new JFXComboBox(FXCollections.observableArrayList("male",
-            "female","rather not say"));
+    Label emptyfield = new Label();
+    String empty = "";
 
     static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
@@ -103,16 +103,28 @@ public class Controller<gender> {
             }
         }
 
-        public void onsaveclicked () throws Exception {                   //on pressing save button on registration form.
-            System.out.println(label.getText());
-            System.out.println(name.getText());
-            System.out.println(fname.getText());
-            System.out.println(cnic.getText());
-            System.out.println(phone.getText());
-            System.out.println(address.getText());
-            System.out.println(degree.getText());
-            System.out.println(email.getText());            //printing details on terminal.
-            menu.start(stage);
+        public void onsaveclicked () throws Exception {//on pressing save button on registration form.
+            if (name.getText() .equals(empty) || email.getText() .equals(empty) || fname.getText().equals(empty)
+                    || phone.getText().equals(empty) || address.getText().equals(empty) || cnic.getText().equals(empty) )
+            {
+                emptyfield.setText("please fill all reqiured fields to continue");
+            }
+            else
+            {
+
+                System.out.println(label.getText());
+                System.out.println(name.getText());
+                System.out.println(fname.getText());
+                System.out.println(cnic.getText());
+                System.out.println(phone.getText());
+                System.out.println(address.getText());
+                System.out.println(degree.getText());
+                System.out.println(email.getText());            //printing details on terminal.
+                try {
+                    menu.start(stage);
+                } catch (Exception e) {
+                    System.out.println("new stage");
+                }}
         }
 
 //REGISTRATION FORM END=================================================================================================

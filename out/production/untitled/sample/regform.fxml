@@ -27,7 +27,7 @@
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
         <JFXDatePicker fx:id="dob" defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" prefHeight="25.0" prefWidth="140.0" promptText="DOB" style="-fx-text-fill: white;" />
-        <JFXComboBox fx:id="gender" editable="true" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" style="-fx-text-fill: white;" unFocusColor="WHITE" />
+        <JFXComboBox fx:id="genderselect" editable="true" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="303.0" prefHeight="25.0" prefWidth="140.0" promptText="Gender" style="-fx-text-fill: white;" unFocusColor="WHITE" />
         <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
@@ -57,5 +57,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
+      <Label fx:id="emptyfield" layoutX="148.0" layoutY="679.0" prefHeight="35.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" />
     </children>
 </AnchorPane>

@@ -57,5 +57,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
+      <Label fx:id="emptyfield" layoutX="148.0" layoutY="679.0" prefHeight="35.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" />
     </children>
 </AnchorPane>
