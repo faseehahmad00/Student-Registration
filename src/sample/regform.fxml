@@ -15,32 +15,28 @@
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Label>
-        <JFXTextField fx:id="name" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="name" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="278.0" prefHeight="25.0" prefWidth="282.0" promptText="Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="190.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="phone" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="301.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="phone" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="384.0" prefHeight="28.0" prefWidth="282.0" promptText="Phone Number" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXDatePicker fx:id="dob" defaultColor="DARKORANGE" layoutX="985.0" layoutY="300.0" prefHeight="25.0" prefWidth="140.0" promptText="DOB" style="-fx-text-fill: white;" />
-        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="842.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXDatePicker fx:id="datePicker" defaultColor="DARKORANGE" layoutX="835.0" layoutY="280.0" prefHeight="25.0" prefWidth="300.0" promptText="DOB" style="-fx-text-fill: white;" />
+        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="384.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="email" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="436.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="email" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="481.0" prefHeight="25.0" prefWidth="282.0" promptText="Email" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXTextField fx:id="address" focusColor="DARKORANGE" labelFloat="true" layoutX="844.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" style="-fx-text-fill: white;" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font></JFXTextField>
-        <JFXTextField fx:id="degree" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="569.0" prefHeight="25.0" prefWidth="282.0" promptText="Degree" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="address" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="481.0" prefHeight="25.0" prefWidth="282.0" promptText="Address" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
@@ -58,11 +54,49 @@
          </font>
       </JFXButton>
       <Label fx:id="emptyfield" layoutX="148.0" layoutY="679.0" prefHeight="35.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" />
-      <RadioButton fx:id="male" layoutX="842.0" layoutY="282.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="107.0" style="-fx-background-color: #FF8C00;" text="MALE">
+      <Label layoutX="148.0" layoutY="547.0" prefHeight="17.0" prefWidth="168.0" style="-fx-text-fill: #FF8C00;" text="SELECT DEGREE :">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="bscs" layoutX="148.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-text-fill: #FF8C00;" text="BSCS">
+         <font>
+            <Font size="14.0" />
+         </font>
          <toggleGroup>
-            <ToggleGroup fx:id="gender" />
+            <ToggleGroup fx:id="degreebutton" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="female" layoutX="842.0" layoutY="320.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="107.0" style="-fx-background-color: #FF8C00;" text="FEMALE" toggleGroup="$gender" />
+      <RadioButton fx:id="bsse" layoutX="301.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="116.0" style="-fx-text-fill: #FF8C00;" text="BSSE" toggleGroup="$degreebutton">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <JFXTextField fx:id="ID" focusColor="DARKORANGE" labelFloat="true" layoutX="148.0" layoutY="175.0" prefHeight="25.0" prefWidth="282.0" promptText="ID" style="-fx-text-fill: white;" unFocusColor="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="835.0" layoutY="547.0" prefHeight="17.0" prefWidth="168.0" style="-fx-text-fill: #FF8C00;" text="SELECT GENDER :">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="male" layoutX="842.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-text-fill: #FF8C00;" text="Male">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="genderbutton" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="female" layoutX="976.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="116.0" style="-fx-text-fill: #FF8C00;" text="Female">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="gender1" />
+         </toggleGroup>
+      </RadioButton>
     </children>
 </AnchorPane>

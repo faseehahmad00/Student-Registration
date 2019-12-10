@@ -21,10 +21,4 @@ public class regcontrol extends Application {
         stage.setFullScreenExitHint("");
     }
 
-    public static JFXComboBox getGenderCB(){
-    JFXComboBox x = new JFXComboBox<>();
-    x.getItems().add("MAle");
-    x.getItems().add("Female");
-    return x;
-    }
 }
