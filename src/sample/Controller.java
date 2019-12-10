@@ -3,10 +3,13 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 
 public class Controller {
     regcontrol reg = new regcontrol();
@@ -41,6 +44,13 @@ public class Controller {
     Label emptyfield = new Label();
     String empty = "";
 
+
+    @FXML
+    RadioButton male = new RadioButton();
+    @FXML
+    RadioButton female = new RadioButton();
+
+
     static Stage stage = new Stage();                                                     //buttons,textfiels etc
 //LOGIN FORM START======================================================================================================
         public void onexitclick () { Platform.exit(); }
@@ -53,6 +63,7 @@ public class Controller {
 
                 try {
                     menu.start(stage);
+                    Main.close();
                 } catch (Exception e) {
                     System.out.println("new stage opened");
                 }
@@ -105,7 +116,7 @@ public class Controller {
 
         public void onsaveclicked () throws Exception {//on pressing save button on registration form.
             if (name.getText() .equals(empty) || email.getText() .equals(empty) || fname.getText().equals(empty)
-                    || phone.getText().equals(empty) || address.getText().equals(empty) || cnic.getText().equals(empty) )
+                    || phone.getText().equals(empty) || address.getText().equals(empty) || cnic.getText().equals(empty))
             {
                 emptyfield.setText("please fill all reqiured fields to continue");
             }
@@ -119,7 +130,11 @@ public class Controller {
                 System.out.println(phone.getText());
                 System.out.println(address.getText());
                 System.out.println(degree.getText());
-                System.out.println(email.getText());            //printing details on terminal.
+                System.out.println(email.getText());//printing details on terminal.
+                if (male.isSelected()){
+                System.out.println("gender:male");}
+                if (female.isSelected()){
+                        System.out.println("gender:female");}
                 try {
                     menu.start(stage);
                 } catch (Exception e) {
@@ -128,6 +143,5 @@ public class Controller {
         }
 
 //REGISTRATION FORM END=================================================================================================
-
-    }
+ }
 

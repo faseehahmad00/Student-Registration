@@ -1,5 +1,6 @@
 package sample;
 
+import com.jfoenix.controls.JFXComboBox;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class regcontrol extends Application {
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
@@ -17,5 +19,12 @@ public class regcontrol extends Application {
         stage.show();
         stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
+    }
+
+    public static JFXComboBox getGenderCB(){
+    JFXComboBox x = new JFXComboBox<>();
+    x.getItems().add("MAle");
+    x.getItems().add("Female");
+    return x;
     }
 }
