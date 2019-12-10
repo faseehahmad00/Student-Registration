@@ -1,70 +1,61 @@
 package sample;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.io.IOException;
 
 public class Controller {
-    regcontrol reg = new regcontrol();
-    menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
-    Remove remove = new Remove();
-    signcontrol signin = new signcontrol();
+   private regcontrol reg = new regcontrol();
+    private menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
+    private Remove remove = new Remove();
+    private signcontrol signin = new signcontrol();
     @FXML
-    PasswordField passwordField = new PasswordField();
+    private PasswordField passwordField = new PasswordField();
     @FXML
-    TextField textField = new TextField();
+    private TextField textField = new TextField();
+//    @FXML
+//    private Label label = new Label();
     @FXML
-    Label label = new Label();
+    private TextField name = new TextField();
     @FXML
-    TextField name = new TextField();
+    private TextField ID = new TextField();
     @FXML
-    TextField ID = new TextField();
+    private TextField fname = new TextField();
     @FXML
-    TextField fname = new TextField();
+    private TextField email = new TextField();
     @FXML
-    TextField email = new TextField();
+    private TextField phone = new TextField();
     @FXML
-    TextField phone = new TextField();
+    private TextField address = new TextField();
     @FXML
-    TextField address = new TextField();
+    private TextField cnic = new TextField();
     @FXML
-    TextField cnic = new TextField();
+    private Text errormsg = new Text();
     @FXML
-    Text errormsg = new Text();
+    private Label emptyfield = new Label();
     @FXML
-    Label emptyfield = new Label();
-    String empty = "";
+    private RadioButton male = new RadioButton();
     @FXML
-    RadioButton male = new RadioButton();
+    private RadioButton female = new RadioButton();
     @FXML
-    RadioButton female = new RadioButton();
+    private RadioButton bscs = new RadioButton();
     @FXML
-    RadioButton bscs = new RadioButton();
-    @FXML
-    RadioButton bsse = new RadioButton();
-    @FXML
-    JFXDatePicker datePicker = new JFXDatePicker();
+    private RadioButton bsse = new RadioButton();
     @FXML
     String gender;
     String degree;
 
 
-    static Stage stage = new Stage();                                                     //buttons,textfiels etc
+    private static Stage stage = new Stage();                                                     //buttons,textfiels etc
 
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
     }
 
-    public void onclick() throws IOException {
+    public void onclick(){
         String passcode = "";
         String username = "";
         if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
@@ -74,9 +65,7 @@ public class Controller {
             try {
                 menu.start(stage);
                 Main.close();
-            } catch (Exception e) {
-                System.out.println("new stage opened");
-            }
+            }catch (Exception e){}
         } else if (textField.getText().isEmpty()) {
             textField.setPromptText("Enter username");
         } else if (passwordField.getText().isEmpty()) {
@@ -90,29 +79,24 @@ public class Controller {
 
 
     ///MENU BAR START=======================================================================================================
-    public void add() throws Exception {
+    public void add() {
         try {
             reg.start(stage);
-        } catch (Exception e) {
-            System.out.println("new stage");
-        }
+        } catch (Exception e) {}
 
     }
 
     public void delete() {
         try {
             remove.start(stage);
-        } catch (Exception e) {
-            System.out.println("new stage opened");
-        }
+        } catch (Exception e) {}
+
     }
 
     public void logout() {
         try {
             signin.start(stage);
-        } catch (Exception e) {
-            System.out.println("new stage opened");
-        }
+        } catch (Exception e) {}
 
     }
 //MENU BAR END==========================================================================================================
@@ -122,17 +106,16 @@ public class Controller {
     public void oncancel() {
         try {
             menu.start(stage);
-        } catch (Exception e) {
-            System.out.println("new stage opened");
-        }
+        } catch (Exception e) {}
     }
 
-    public void onsaveclicked() throws Exception {//on pressing save button on registration form.
+    public void onsaveclicked() {//on pressing save button on registration form.
         if (name.getText().isEmpty() || email.getText().isEmpty()|| fname.getText().isEmpty()
                 || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty())
         {
             emptyfield.setText("please fill all reqiured fields to continue"); }
         else {
+            System.out.println(ID.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
             System.out.println(cnic.getText());
@@ -155,9 +138,7 @@ public class Controller {
             try {
                 menu.start(stage);
                 }
-            catch (Exception e) {
-                System.out.println("new stage");
-                }
+            catch (Exception e) {}
             }
         }
 
