@@ -110,7 +110,16 @@ public class Controller {
     }
 
     public void onsaveclicked() {//on pressing save button on registration form.
-        if (name.getText().isEmpty() || email.getText().isEmpty()|| fname.getText().isEmpty()
+        if (male.isSelected()) {
+            gender = "male";}
+        if (female.isSelected()) {
+            gender = "female"; }
+        if (bscs.isSelected()) {
+            degree = "BSCS"; }
+        if (bsse.isSelected()) {
+            degree = "BSSE"; }
+        //radio button functions
+        if (name.getText().isEmpty() || degree.isEmpty()|| fname.getText().isEmpty() ||ID.getText().isEmpty()
                 || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty())
         {
             emptyfield.setText("please fill all reqiured fields to continue"); }
@@ -122,17 +131,6 @@ public class Controller {
             System.out.println(phone.getText());
             System.out.println(address.getText());
             System.out.println(email.getText());//printing details on terminal.
-            if (male.isSelected()) {
-                gender = "male";
-                if (female.isSelected()) {
-                    gender = "female";
-                }
-                if (bscs.isSelected()) {
-                    degree = "BSCS";
-                }
-                if (bsse.isSelected()) {
-                    degree = "BSSE";
-                } //radio button functions
             System.out.println(gender);
             System.out.println(degree);
             try {
@@ -144,5 +142,5 @@ public class Controller {
 
 //REGISTRATION FORM END=================================================================================================
     }
-}
+
 
