@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label layoutX="65.0" layoutY="73.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #ff8c00;" text="   Remove Student" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="528.0" layoutY="219.0" prefHeight="330.0" prefWidth="311.0">
+         <children>
+            <Label layoutX="113.0" layoutY="24.0" text="Student ID" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="ID" style="-fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="212.0" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Remove">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="267.0" onAction="#oncancel" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Cancel">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="1297.0" onAction="#onexitclick" prefHeight="57.0" prefWidth="69.0" ripplerFill="WHITE" text="X" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
