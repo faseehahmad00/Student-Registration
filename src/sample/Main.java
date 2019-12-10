@@ -28,7 +28,6 @@ public class Main extends Application {
     }
 
     public static void close() {
-        if(primaryStage!=null)
             primaryStage.close();
     }
 }
