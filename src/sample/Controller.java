@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import org.sqlite.core.DB;
 
 public class Controller {
     @FXML
@@ -42,8 +43,9 @@ public class Controller {
     @FXML
     private RadioButton bscs = new RadioButton();
     String gender;
-    String degree;                                                   //buttons,textfiels etc
-
+    String degree;
+    Write add = new Write();
+    //buttons,textfiels etc
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
@@ -122,11 +124,12 @@ public class Controller {
         if (bsse.isSelected()) {
             degree = "BSSE"; }
         //  radio button functions
-        String  date = datePicker.getValue().toString();
+       // String  date = datePicker.getValue().toString();
         if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || ID.getText().isEmpty() ||
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
+            add.insert("faseeh","azhar");
         } else {
             System.out.println(ID.getText());
             System.out.println(name.getText());
@@ -137,7 +140,9 @@ public class Controller {
             System.out.println(email.getText());//printing details on terminal.
             System.out.println(gender);
             System.out.println(degree);
-            System.out.println(date);
+           // System.out.println(date);
+
+
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
