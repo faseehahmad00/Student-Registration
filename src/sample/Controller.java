@@ -44,7 +44,7 @@ public class Controller {
     private RadioButton bscs = new RadioButton();
     String gender;
     String degree;
-    Write add = new Write();
+    DataBase database = new DataBase();
     //buttons,textfiels etc
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
@@ -129,7 +129,7 @@ public class Controller {
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
-            add.insert("faseeh","azhar");
+            database.insert("faseeh","azhar");
         } else {
             System.out.println(ID.getText());
             System.out.println(name.getText());
