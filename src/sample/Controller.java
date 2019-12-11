@@ -1,22 +1,18 @@
 package sample;
+import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
 
 public class Controller {
-   private regcontrol reg = new regcontrol();
-    private menucontrol menu = new menucontrol();                        //st1 is object of of stagecontrol(stcontrol) class
-    private Remove remove = new Remove();
-    private signcontrol signin = new signcontrol();
     @FXML
     private PasswordField passwordField = new PasswordField();
     @FXML
     private TextField textField = new TextField();
-//    @FXML
-//    private Label label = new Label();
     @FXML
     private TextField name = new TextField();
     @FXML
@@ -40,22 +36,21 @@ public class Controller {
     @FXML
     private RadioButton female = new RadioButton();
     @FXML
-    private RadioButton bscs = new RadioButton();
+    JFXDatePicker datePicker = new JFXDatePicker();
     @FXML
     private RadioButton bsse = new RadioButton();
     @FXML
+    private RadioButton bscs = new RadioButton();
+
     String gender;
-    String degree;
-
-
-    private static Stage stage = new Stage();                                                     //buttons,textfiels etc
+    String degree;                                                   //buttons,textfiels etc
 
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
     }
 
-    public void onclick(){
+    public void onclick() {
         String passcode = "";
         String username = "";
         if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
@@ -63,9 +58,10 @@ public class Controller {
             errormsg.setText("login Successful");
 
             try {
-                menu.start(stage);
-                Main.close();
-            }catch (Exception e){}
+                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Main.primaryStage.setScene(new Scene(root));
+            } catch (Exception ignored) {
+            }
         } else if (textField.getText().isEmpty()) {
             textField.setPromptText("Enter username");
         } else if (passwordField.getText().isEmpty()) {
@@ -81,22 +77,28 @@ public class Controller {
     ///MENU BAR START=======================================================================================================
     public void add() {
         try {
-            reg.start(stage);
-        } catch (Exception e) {}
+            Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+        } catch (Exception ignored) {
+        }
 
     }
 
     public void delete() {
         try {
-            remove.start(stage);
-        } catch (Exception e) {}
+            Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+        } catch (Exception ignored) {
+        }
 
     }
 
     public void logout() {
         try {
-            signin.start(stage);
-        } catch (Exception e) {}
+            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+        } catch (Exception ignored) {
+        }
 
     }
 //MENU BAR END==========================================================================================================
@@ -105,11 +107,15 @@ public class Controller {
     //REGISTRATION FORM START===============================================================================================
     public void oncancel() {
         try {
-            menu.start(stage);
-        } catch (Exception e) {}
+            Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+        } catch (Exception ignored) {
+        }
     }
 
     public void onsaveclicked() {//on pressing save button on registration form.
+        String birthdate;
+        birthdate = datePicker.getValue().toString();
         if (male.isSelected()) {
             gender = "male";}
         if (female.isSelected()) {
@@ -118,12 +124,12 @@ public class Controller {
             degree = "BSCS"; }
         if (bsse.isSelected()) {
             degree = "BSSE"; }
-        //radio button functions
-        if (name.getText().isEmpty() || degree.isEmpty()|| fname.getText().isEmpty() ||ID.getText().isEmpty()
-                || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty())
-        {
-            emptyfield.setText("please fill all reqiured fields to continue"); }
-        else {
+        //  radio button functions
+        if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || ID.getText().isEmpty() ||
+                gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
+                || birthdate.isEmpty() || email.getText().isEmpty()) {
+            emptyfield.setText("please fill all reqiured fields to continue");
+        } else {
             System.out.println(ID.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
@@ -133,14 +139,16 @@ public class Controller {
             System.out.println(email.getText());//printing details on terminal.
             System.out.println(gender);
             System.out.println(degree);
+            System.out.println(birthdate);
             try {
-                menu.start(stage);
-                }
-            catch (Exception e) {}
+                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Main.primaryStage.setScene(new Scene(root));
+            } catch (Exception ignored) {
             }
         }
-
-//REGISTRATION FORM END=================================================================================================
     }
 
+//REGISTRATION FORM END=================================================================================================
+    // }
 
+}

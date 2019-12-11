@@ -11,12 +11,13 @@ public class menucontrol extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
-        stage.setTitle("WELCOME TO STUDENT REGISTRATION");
-        stage.setScene(new Scene(root));
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.show();
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("");
+//        stage.setTitle("WELCOME TO STUDENT REGISTRATION");
+//        stage.setScene(new Scene(root));
+//        stage.initStyle(StageStyle.UNDECORATED);
+//        stage.show();
+//        stage.setFullScreen(true);
+//        stage.setFullScreenExitHint("");
+        Main.primaryStage.setScene(new Scene(root));
     }
 
 }

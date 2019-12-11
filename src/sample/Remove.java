@@ -11,13 +11,8 @@ public class Remove extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
-        stage.setTitle("WELCOME TO STUDENT REGISTRATION");
-        stage.setScene(new Scene(root));
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.show();
-        stage.setFullScreen(true);
-        stage.setFullScreenExitHint("");
+
+
     }
 }
 

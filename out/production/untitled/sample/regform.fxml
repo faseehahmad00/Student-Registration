@@ -7,7 +7,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
@@ -96,17 +95,10 @@
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <Circle fill="RED" layoutX="125.0" layoutY="205.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="125.0" layoutY="405.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="125.0" layoutY="558.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="814.0" layoutY="205.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="814.0" layoutY="399.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="RED" layoutX="814.0" layoutY="496.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="75.0" layoutY="130.0" prefHeight="17.0" prefWidth="282.0" style="-fx-text-fill: #FF8C00;" text="( Fields with DOT are compulsary)">
+      <Label layoutX="75.0" layoutY="130.0" prefHeight="17.0" prefWidth="282.0" style="-fx-text-fill: #FF8C00;" text="*All fields are compulsary.">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Circle fill="RED" layoutX="125.0" layoutY="294.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
     </children>
 </AnchorPane>
