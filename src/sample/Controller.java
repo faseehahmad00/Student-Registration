@@ -114,8 +114,6 @@ public class Controller {
     }
 
     public void onsaveclicked() {//on pressing save button on registration form.
-        String birthdate;
-        birthdate = datePicker.getValue().toString();
         if (male.isSelected()) {
             gender = "male";}
         if (female.isSelected()) {
@@ -127,7 +125,7 @@ public class Controller {
         //  radio button functions
         if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || ID.getText().isEmpty() ||
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
-                || birthdate.isEmpty() || email.getText().isEmpty()) {
+                || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
         } else {
             System.out.println(ID.getText());
@@ -139,7 +137,7 @@ public class Controller {
             System.out.println(email.getText());//printing details on terminal.
             System.out.println(gender);
             System.out.println(degree);
-            System.out.println(birthdate);
+            System.out.println(datePicker.getValue().toString());
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));

@@ -27,7 +27,7 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXDatePicker fx:id="datePicker" defaultColor="DARKORANGE" layoutX="835.0" layoutY="280.0" prefHeight="25.0" prefWidth="300.0" promptText="DOB" style="-fx-text-fill: #FF8C00; -fx-background-color: white;" />
+        <JFXDatePicker fx:id="datePicker" defaultColor="DARKORANGE" layoutX="835.0" layoutY="280.0" prefHeight="25.0" prefWidth="300.0" promptText="DOB" style="-fx-text-fill: #FF8C00; -fx-background-color: black;" />
         <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="384.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
@@ -84,7 +84,7 @@
       </Label>
       <RadioButton fx:id="male" layoutX="842.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="59.0" style="-fx-text-fill: #FF8C00;" text="Male">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="gender1" />
@@ -92,7 +92,7 @@
       </RadioButton>
       <RadioButton fx:id="female" layoutX="976.0" layoutY="574.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="116.0" style="-fx-text-fill: #FF8C00;" text="Female" toggleGroup="$gender1">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </RadioButton>
       <Label layoutX="75.0" layoutY="130.0" prefHeight="17.0" prefWidth="282.0" style="-fx-text-fill: #FF8C00;" text="*All fields are compulsary.">
