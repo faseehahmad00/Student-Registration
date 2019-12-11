@@ -41,7 +41,6 @@ public class Controller {
     private RadioButton bsse = new RadioButton();
     @FXML
     private RadioButton bscs = new RadioButton();
-
     String gender;
     String degree;                                                   //buttons,textfiels etc
 
@@ -123,6 +122,7 @@ public class Controller {
         if (bsse.isSelected()) {
             degree = "BSSE"; }
         //  radio button functions
+        String  date = datePicker.getValue().toString();
         if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || ID.getText().isEmpty() ||
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty()) {
@@ -137,7 +137,7 @@ public class Controller {
             System.out.println(email.getText());//printing details on terminal.
             System.out.println(gender);
             System.out.println(degree);
-            System.out.println(datePicker.getValue().toString());
+            System.out.println(date);
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
