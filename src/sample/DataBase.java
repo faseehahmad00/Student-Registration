@@ -40,7 +40,7 @@ public class DataBase {
 //
 
             statement.execute("INSERT INTO student " +  "(name,fname) "+
-                    "VALUES ('faseeh', 'Ahmad');");;
+                    "VALUES ('faseeh', 'Ahmad');");
 
         } catch (SQLException e) {
             e.printStackTrace();
