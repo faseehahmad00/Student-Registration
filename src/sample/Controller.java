@@ -135,6 +135,8 @@ public class Controller {
                 || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
             database.insert();
+            //"faseeh","azhar","377 C1","0324","male",
+            //                    "bscs","@gmail","35202"
         } else {
             System.out.println(ID.getText());
             System.out.println(name.getText());

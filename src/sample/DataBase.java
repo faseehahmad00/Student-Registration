@@ -17,7 +17,8 @@ public class DataBase {
         }
     }
 
-
+//String name,String fname,String address,String phone,String gender,String degree,
+//                       String email,String cnic
     public void insert() {
         try {
             connect();
@@ -33,19 +34,14 @@ public class DataBase {
                     "\t\"email\"\tTEXT,\n" +
                     "\t\"cnic\"\tTEXT\n" +
                     ");");
-            statement.execute("INSERT INTO student" +
-                    " (name, fname, phone, address, degree, gender, email, cnic)" +
-                    " VALUES (" +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    "abc" + ", " +
-                    ");"
-            );
+//            statement.execute("INSERT INTO student" +
+//                    " (name, father name, phone, address, degree, gender, email, cnic)" +
+//                    " VALUES ('%s','%s','%s','%s','%s','%s','%s','%s'),name,fname,phone,address,degree,gender,email,cnic");
+//
+
+            statement.execute("INSERT INTO student " +  "(name,fname) "+
+                    "VALUES ('faseeh', 'Ahmad');");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
