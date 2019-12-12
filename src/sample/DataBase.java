@@ -18,7 +18,7 @@ public class DataBase {
     }
 
 
-    public void insert(String name,String fname) {
+    public void insert() {
         try {
             connect();
             Statement statement =  conn.createStatement();
@@ -49,7 +49,7 @@ public class DataBase {
         } catch (SQLException e) {
             e.printStackTrace();
         }
- x
+
 
     }
 }

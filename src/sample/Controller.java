@@ -61,6 +61,7 @@ public class Controller {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
+                Main.primaryStage.setFullScreen(true);
             } catch (Exception ignored) {
             }
         } else if (textField.getText().isEmpty()) {
@@ -80,6 +81,7 @@ public class Controller {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
         }
 
@@ -89,6 +91,7 @@ public class Controller {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
         }
 
@@ -98,6 +101,7 @@ public class Controller {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
         }
 
@@ -110,6 +114,7 @@ public class Controller {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
             Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
         }
     }
@@ -129,7 +134,7 @@ public class Controller {
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
-            database.insert("faseeh","azhar");
+            database.insert();
         } else {
             System.out.println(ID.getText());
             System.out.println(name.getText());
@@ -146,6 +151,7 @@ public class Controller {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
+                Main.primaryStage.setFullScreen(true);
             } catch (Exception ignored) {
             }
         }
