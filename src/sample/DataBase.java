@@ -1,43 +1,55 @@
 package sample;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DataBase {
+    Connection conn = null;
 
     /**
      * Connect to the test.db database
-     *
-     * @return the Connection object
      */
-    private Connection connect() {
+    private void connect() {
         // SQLite connection string
         String url = "jdbc:sqlite:C:/Users/fasee/IdeaProjects/untitled/studentregistration.db";
-        Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return conn;
     }
 
 
     public void insert(String name,String fname) {
-        String sql1 = "CREATE TABLE IF NOT EXISTS student (\n"
-                + "    name text ,\n"
-                + "    fname text ,\n"
-                + ");";
-        String sql = "INSERT INTO student(name,fname)";
-
-        try (Connection conn = this.connect();
-             PreparedStatement statement = conn.prepareStatement(sql)) {
-            statement.setString(1, name);
-            statement.setString(2,fname);
-            statement.executeUpdate();
+        try {
+            connect();
+            Statement statement =  conn.createStatement();
+            statement.execute("CREATE TABLE IF NOT EXISTS \"student\" (\n" +
+                    "\t\"ID\"\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,\n" +
+                    "\t\"name\"\tTEXT,\n" +
+                    "\t\"fname\"\tTEXT,\n" +
+                    "\t\"phone\"\tTEXT,\n" +
+                    "\t\"address\"\tTEXT,\n" +
+                    "\t\"degree\"\tTEXT,\n" +
+                    "\t\"gender\"\tTEXT,\n" +
+                    "\t\"email\"\tTEXT,\n" +
+                    "\t\"cnic\"\tTEXT\n" +
+                    ");");
+            statement.execute("INSERT INTO student" +
+                    " (name, fname, phone, address, degree, gender, email, cnic)" +
+                    " VALUES (" +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    "abc" + ", " +
+                    ");"
+            );
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
+ x
+
     }
 }
