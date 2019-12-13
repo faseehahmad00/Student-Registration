@@ -23,7 +23,7 @@ public class DataBase {
         try {
             connect();
             Statement statement =  conn.createStatement();
-            statement.execute("CREATE TABLE \"student\" (\n" +
+            statement.execute("CREATE TABLE IF NOT EXISTS\"student\" (\n" +
                     "\t\"name\"\tTEXT,\n" +
                     "\t\"fname\"\tTEXT,\n" +
                     "\t\"phone\"\tTEXT,\n" +
@@ -40,12 +40,12 @@ public class DataBase {
                     String.format(" VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s');"
                                   ,name,fname,phone,address,degree,gender,email,cnic,DOB));
 
-
 //             statement.execute("INSERT INTO student " +  "(name,fname) "+
 //                     "VALUES ('faseeh', 'Ahmad');");
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("The student details were not added to database.Make sure to enter all details correctly");
+
         }
 
 

@@ -15,10 +15,6 @@
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Label>
-        <JFXTextField fx:id="ID" focusColor="DARKORANGE" labelFloat="true" layoutX="141.0" layoutY="190.0" prefHeight="25.0" prefWidth="282.0" promptText="ID" style="-fx-text-fill: white;" unFocusColor="WHITE">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font></JFXTextField>
         <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="190.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
@@ -28,7 +24,7 @@
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
         <JFXDatePicker fx:id="datePicker" defaultColor="DARKORANGE" layoutX="835.0" layoutY="280.0" prefHeight="25.0" prefWidth="300.0" promptText="DOB" style="-fx-text-fill: #FF8C00; -fx-background-color: black;" />
-        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="384.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="384.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC(13 digits without dashes)" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
@@ -53,7 +49,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Label fx:id="emptyfield" layoutX="148.0" layoutY="679.0" prefHeight="35.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" textFill="DARKORANGE" />
+      <Label fx:id="emptyfield" layoutX="148.0" layoutY="619.0" prefHeight="95.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" textFill="DARKORANGE" />
       <Label layoutX="148.0" layoutY="547.0" prefHeight="17.0" prefWidth="168.0" style="-fx-text-fill: #FF8C00;" text="SELECT DEGREE :">
          <font>
             <Font name="Arial Black" size="14.0" />
