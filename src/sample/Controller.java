@@ -17,8 +17,6 @@ public class Controller {
     @FXML
     private TextField name = new TextField();
     @FXML
-    private TextField ID = new TextField();
-    @FXML
     private TextField fname = new TextField();
     @FXML
     private TextField email = new TextField();
@@ -130,15 +128,14 @@ public class Controller {
             degree = "BSSE"; }
         //  radio button functions
        // String  date = datePicker.getValue().toString();
-        if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || ID.getText().isEmpty() ||
+        if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() ||
                 gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty()) {
             emptyfield.setText("please fill all reqiured fields to continue");
-            database.insert();
-            //"faseeh","azhar","377 C1","0324","male",
-            //                    "bscs","@gmail","35202"
+//            database.insert("faseehahmad","azhar Riaz","377 C1 China Scheme","0324-4672725","male",
+//                                        "bsse","00@gmail","35202");
+//            //
         } else {
-            System.out.println(ID.getText());
             System.out.println(name.getText());
             System.out.println(fname.getText());
             System.out.println(cnic.getText());
@@ -148,7 +145,7 @@ public class Controller {
             System.out.println(gender);
             System.out.println(degree);
            // System.out.println(date);
-
+            database.insert(name.getText(),fname.getText(),address.getText(),phone.getText(),gender,degree,email.getText(),cnic.getText(),datePicker.getValue().toString());
 
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
