@@ -34,10 +34,12 @@ public class DataBase {
                     "\t\"email\"\tTEXT,\n" +
                     "\t\"cnic\"\tTEXT\n" +
                     ");");
-//            statement.execute("INSERT INTO student" +
-//                    " (name, father name, phone, address, degree, gender, email, cnic)" +
-//                    " VALUES ('%s','%s','%s','%s','%s','%s','%s','%s'),name,fname,phone,address,degree,gender,email,cnic");
-//
+            statement.execute("INSERT INTO student" +
+                    " (name, father name, phone, address, degree, gender, email, cnic)" +
+                    String.format(" VALUES (\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');"
+                                  ,name,fname,phone,address,degree,gender,email,cnic)
+                             );
+
 
             statement.execute("INSERT INTO student " +  "(name,fname) "+
                     "VALUES ('faseeh', 'Ahmad');");
