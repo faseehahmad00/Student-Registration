@@ -37,12 +37,11 @@ public class DataBase {
             statement.execute("INSERT INTO student" +
                     " (name, father name, phone, address, degree, gender, email, cnic)" +
                     String.format(" VALUES (\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');"
-                                  ,name,fname,phone,address,degree,gender,email,cnic)
-                             );
+                                  ,name,fname,phone,address,degree,gender,email,cnic));
 
 
-            statement.execute("INSERT INTO student " +  "(name,fname) "+
-                    "VALUES ('faseeh', 'Ahmad');");
+//             statement.execute("INSERT INTO student " +  "(name,fname) "+
+//                     "VALUES ('faseeh', 'Ahmad');");
 
         } catch (SQLException e) {
             e.printStackTrace();
