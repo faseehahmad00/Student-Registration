@@ -36,7 +36,7 @@ public class DataBase {
                     ");");
             statement.execute("INSERT INTO student" +
                     " (name, father name, phone, address, degree, gender, email, cnic)" +
-                    String.format(" VALUES (\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');"
+                    String.format(" VALUES ('%s','%s','%s','%s','%s','%s','%s','%s');"
                                   ,name,fname,phone,address,degree,gender,email,cnic));
 
 
