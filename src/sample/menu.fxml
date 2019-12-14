@@ -31,9 +31,9 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <JFXButton buttonType="RAISED" layoutX="1306.0" layoutY="1.0" onAction="#onexitclick" prefHeight="52.0" prefWidth="70.0" text="X" textFill="DARKORANGE">
+        <JFXButton buttonType="RAISED" layoutX="1296.0" layoutY="2.0" onAction="#onexitclick" prefHeight="52.0" prefWidth="70.0" text="X" textFill="DARKORANGE">
             <font>
-                <Font name="System Bold" size="16.0" />
+                <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
       <AnchorPane layoutX="537.0" layoutY="228.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
