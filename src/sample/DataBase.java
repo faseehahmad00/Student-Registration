@@ -4,7 +4,7 @@ import java.sql.*;
 public class DataBase {
     Connection conn = null;
 
-    /**
+    /*
      * Connect to the test.db database
      */
     private void connect() {
