@@ -59,7 +59,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="159.0" layoutY="438.0" prefHeight="17.0" prefWidth="168.0" style="-fx-text-fill: #FF8C00;" text="Select Gender :">
+      <Label layoutX="159.0" layoutY="448.0" prefHeight="17.0" prefWidth="168.0" style="-fx-text-fill: #FF8C00;" text="Select Gender :">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
          </font>
@@ -79,12 +79,12 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXRadioButton>
-      <JFXRadioButton layoutX="160.0" layoutY="474.0" text="Male" textFill="DARKORANGE">
+      <JFXRadioButton layoutX="160.0" layoutY="486.0" text="Male" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXRadioButton>
-      <JFXRadioButton layoutX="337.0" layoutY="474.0" text="Female" textFill="DARKORANGE">
+      <JFXRadioButton layoutX="337.0" layoutY="486.0" text="Female" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

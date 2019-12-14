@@ -20,7 +20,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="ID" style="-fx-text-fill: white;" unFocusColor="WHITE">
+            <JFXTextField focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

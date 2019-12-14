@@ -21,7 +21,7 @@
             <FontAwesomeIcon fill="DARKORANGE" glyphName="PLUS" layoutX="197.0" layoutY="161.0" size="70" wrappingWidth="60.28571319580078" />
          </children>
         </AnchorPane>
-        <Label layoutX="39.0" layoutY="65.0" prefHeight="35.0" prefWidth="103.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Menu" textFill="DARKORANGE">
+        <Label layoutX="48.0" layoutY="63.0" prefHeight="35.0" prefWidth="103.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Menu" textFill="DARKORANGE">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
