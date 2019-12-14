@@ -7,10 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
-import org.sqlite.core.DB;
-
 import java.sql.SQLException;
-import java.sql.SQLOutput;
+
 
 public class Controller {
     @FXML
@@ -45,6 +43,10 @@ public class Controller {
     private RadioButton bscs = new RadioButton();
     @FXML
     private Label regsuccess = new Label();
+    @FXML
+    private TextField removeid = new TextField();
+    @FXML
+    private  Label removemsg = new Label();
     String gender;
     String degree;
     DataBase database = new DataBase();
@@ -95,7 +97,6 @@ public class Controller {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-            database.delete("3520229858023");
         } catch (Exception ignored) {
         }
 
@@ -134,9 +135,10 @@ public class Controller {
             degree = "BSSE"; }
         //  radio button functions
        // String  date = datePicker.getValue().toString();
-        if (fname.getText().isEmpty() || phone.getText().isEmpty() || cnic.getText().isEmpty()
-                || email.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || gender.isEmpty()
-                || datePicker.getValue().toString().isEmpty()) {
+        if (fname.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
+                || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
+                 || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty()
+        ) {
 
             emptyfield.setText("please fill all reqiured fields to continue");
 
@@ -161,6 +163,22 @@ public class Controller {
     }
 
 //REGISTRATION FORM END=================================================================================================
-    // }
+ //
+//REMOVE FXML START====================================================================================================
+    public void studentremove() throws SQLException {
+        if(removeid.getText().isEmpty() || removemsg.getText().length() != 13 )
+        {
+            removemsg.setText("enter valid student cnic");
+        }
+        else {
+            database.delete(removeid.getText());
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Main.primaryStage.setScene(new Scene(root));
+                Main.primaryStage.setFullScreen(true);
+            } catch (Exception ignored) {
+            }
+        }}
+
 
 }

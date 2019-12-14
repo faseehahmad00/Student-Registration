@@ -51,7 +51,7 @@ public class DataBase {
         public void delete(String cnic) throws SQLException {
         connect();
             Statement statement =  conn.createStatement();
-            statement.execute("DELETE FROM student WHERE cnic =3520276175649");
+            statement.execute("DELETE FROM student WHERE cnic= "+cnic);
 
         }
 
