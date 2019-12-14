@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <AnchorPane layoutX="84.0" layoutY="190.0" prefHeight="281.0" prefWidth="413.0" style="-fx-background-color: black;">
             <children>
@@ -36,21 +36,6 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <Label layoutX="601.0" layoutY="150.0" opacity="0.79" text="&quot;Knowledge" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="55.0" />
-            </font>
-        </Label>
-        <Label layoutX="918.0" layoutY="231.0" opacity="0.79" text="Is" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="69.0" />
-            </font>
-        </Label>
-        <Label layoutX="971.0" layoutY="331.0" opacity="0.79" text="Power.&quot;" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="55.0" />
-            </font>
-        </Label>
         <JFXButton buttonType="RAISED" layoutX="1306.0" layoutY="1.0" onAction="#onexitclick" prefHeight="52.0" prefWidth="70.0" text="X" textFill="DARKORANGE">
             <font>
                 <Font name="System Bold" size="16.0" />

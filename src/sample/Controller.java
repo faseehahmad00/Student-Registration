@@ -9,6 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import org.sqlite.core.DB;
 
+import java.sql.SQLException;
+import java.sql.SQLOutput;
+
 public class Controller {
     @FXML
     private PasswordField passwordField = new PasswordField();
@@ -40,6 +43,8 @@ public class Controller {
     private RadioButton bsse = new RadioButton();
     @FXML
     private RadioButton bscs = new RadioButton();
+    @FXML
+    private Label regsuccess = new Label();
     String gender;
     String degree;
     DataBase database = new DataBase();
@@ -90,6 +95,7 @@ public class Controller {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
+            database.delete("3520229858023");
         } catch (Exception ignored) {
         }
 
@@ -117,7 +123,7 @@ public class Controller {
         }
     }
 
-    public void onsaveclicked() {//on pressing save button on registration form.
+    public void onsaveclicked() throws SQLException {//on pressing save button on registration form.
         if (male.isSelected()) {
             gender = "male";}
         if (female.isSelected()) {
@@ -128,32 +134,30 @@ public class Controller {
             degree = "BSSE"; }
         //  radio button functions
        // String  date = datePicker.getValue().toString();
-        if (name.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() ||
-                gender.isEmpty() || phone.getText().isEmpty() || address.getText().isEmpty() || cnic.getText().isEmpty()
-                || email.getText().isEmpty()) {
+        if (fname.getText().isEmpty() || phone.getText().isEmpty() || cnic.getText().isEmpty()
+                || email.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || gender.isEmpty()
+                || datePicker.getValue().toString().isEmpty()) {
+
             emptyfield.setText("please fill all reqiured fields to continue");
-//            database.insert("faseehahmad","azhar Riaz","377 C1 China Scheme","0324-4672725","male",
-//                                        "bsse","00@gmail","35202");
-//            //
+
+
         } else {
-            System.out.println(name.getText());
-            System.out.println(fname.getText());
-            System.out.println(cnic.getText());
-            System.out.println(phone.getText());
-            System.out.println(address.getText());
-            System.out.println(email.getText());//printing details on terminal.
-            System.out.println(gender);
-            System.out.println(degree);
-           // System.out.println(date);
-            database.insert(name.getText(),fname.getText(),address.getText(),phone.getText(),gender,degree,email.getText(),cnic.getText(),datePicker.getValue().toString());
+            if (cnic.getText().length() != 13)
+            {emptyfield.setText("enter your cnic correctly without -.it must contain only 13 letters");}
+
+            else{
+            database.insert(name.getText(),fname.getText(),address.getText(),phone.getText()
+                        ,gender,degree,email.getText(),cnic.getText(),datePicker.getValue().toString());
 
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
+                regsuccess.setText("Student added successfully");
+
             } catch (Exception ignored) {
             }
-        }
+        }}
     }
 
 //REGISTRATION FORM END=================================================================================================
