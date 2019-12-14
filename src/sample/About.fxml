@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.About">
+   <children>
+      <Label layoutX="64.0" layoutY="71.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   About" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <AnchorPane layoutX="135.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+         <children>
+            <Label layoutX="70.0" layoutY="146.0" text="Faseeh Ahmad" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="245.0" text="&quot;This project Fucked me.&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="555.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+         <children>
+            <Label layoutX="70.0" layoutY="146.0" text="Ahmed Shabbir" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="245.0" text="&quot;Krtay hain kuch.&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="993.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+         <children>
+            <Label layoutX="58.0" layoutY="146.0" text="Abdullah Shahzad" textFill="DARKORANGE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="246.0" text="&quot;Talk is Cheap, show me the Code;&quot;" textFill="DARKORANGE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="1295.0" prefHeight="62.0" prefWidth="71.0" text="X" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
