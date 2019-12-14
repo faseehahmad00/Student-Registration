@@ -41,6 +41,5 @@
                 <Font name="System Bold" size="16.0" />
             </font>
         </JFXButton>
-      <Label fx:id="regsuccess" layoutX="91.0" layoutY="520.0" prefHeight="17.0" prefWidth="440.0" textFill="#fff9f9" />
     </children>
 </AnchorPane>

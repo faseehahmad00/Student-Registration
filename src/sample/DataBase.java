@@ -19,10 +19,10 @@ public class DataBase {
 
 //
     public void insert(String name,String fname,String address,String phone,String gender,String degree,
-                       String email,String cnic,String DOB) {
+                       String email,String cnic,String DOB) throws SQLException {
         try {
             connect();
-            Statement statement =  conn.createStatement();
+            Statement statement = conn.createStatement();
             statement.execute("CREATE TABLE IF NOT EXISTS\"student\" (\n" +
                     "\t\"name\"\tTEXT,\n" +
                     "\t\"fname\"\tTEXT,\n" +
@@ -38,16 +38,23 @@ public class DataBase {
             statement.execute("INSERT INTO student" +
                     " (name, fname , phone, address , degree , gender , email , cnic , DOB )" +
                     String.format(" VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s');"
-                                  ,name,fname,phone,address,degree,gender,email,cnic,DOB));
+                            , name, fname, phone, address, degree, gender, email, cnic, DOB));
 
 //             statement.execute("INSERT INTO student " +  "(name,fname) "+
 //                     "VALUES ('faseeh', 'Ahmad');");
 
         } catch (SQLException e) {
             System.out.println("The student details were not added to database.Make sure to enter all details correctly");
+        }
+
+    }
+        public void delete(String cnic) throws SQLException {
+        connect();
+            Statement statement =  conn.createStatement();
+            statement.execute("DELETE FROM student WHERE cnic =3520276175649");
 
         }
 
 
-    }
+
 }

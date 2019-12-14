@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import org.sqlite.core.DB;
 
+import java.sql.SQLException;
 import java.sql.SQLOutput;
 
 public class Controller {
@@ -94,6 +95,7 @@ public class Controller {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
+            database.delete("3520229858023");
         } catch (Exception ignored) {
         }
 
@@ -121,7 +123,7 @@ public class Controller {
         }
     }
 
-    public void onsaveclicked() {//on pressing save button on registration form.
+    public void onsaveclicked() throws SQLException {//on pressing save button on registration form.
         if (male.isSelected()) {
             gender = "male";}
         if (female.isSelected()) {
@@ -134,7 +136,7 @@ public class Controller {
        // String  date = datePicker.getValue().toString();
         if (fname.getText().isEmpty() || phone.getText().isEmpty() || cnic.getText().isEmpty()
                 || email.getText().isEmpty() || degree.isEmpty() || fname.getText().isEmpty() || gender.isEmpty()
-                ) {
+                || datePicker.getValue().toString().isEmpty()) {
 
             emptyfield.setText("please fill all reqiured fields to continue");
 
