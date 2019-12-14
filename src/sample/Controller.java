@@ -43,7 +43,7 @@ public class Controller {
     String gender;
     String degree;
     DataBase database = new DataBase();
-    //buttons,textfiels etc
+    //buttons,textfields etc
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
