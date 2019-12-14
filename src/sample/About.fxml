@@ -18,7 +18,7 @@
                         <Font name="Tahoma Bold" size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="46.0" layoutY="245.0" text="&quot;This project Fucked me.&quot;" textFill="DARKORANGE">
+                <Label fx:id="label1" layoutX="46.0" layoutY="245.0" text="&quot;This project Fucked me.&quot;" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold Italic" size="14.0" />
                     </font>
