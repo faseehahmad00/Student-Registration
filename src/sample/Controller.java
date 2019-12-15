@@ -49,6 +49,7 @@ public class Controller {
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
+    @FXML
     String gender;
     String degree;
     DataBase database = new DataBase();
@@ -158,13 +159,9 @@ public class Controller {
        // String  date = datePicker.getValue().toString();
         if (fname.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
                 || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
-                 || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty()
-        ) {
-
-            emptyfield.setText("please fill all reqiured fields to continue");
-
-
-        } else {
+                 || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty())
+        {emptyfield.setText("please fill all reqiured fields to continue"); }
+        else {
             if (cnic.getText().length() != 13)
             {emptyfield.setText("enter your cnic correctly without -.it must contain only 13 letters");}
 
@@ -187,19 +184,19 @@ public class Controller {
  //
 //REMOVE FXML START====================================================================================================
     public void studentremove() throws SQLException {
-        if(removeid.getText().isEmpty() || removemsg.getText().length() != 13 )
-        {
-            removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
-        }
-        else {
+        boolean condition = (removemsg.getText().length() == 13);
+        if (true) {
             database.delete(removeid.getText());
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
-            } catch (Exception ignored) {
+            } catch (Exception ignored) {}
+        }
+            else {
+                 removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
             }
-        }}
+    }
 
 
 }

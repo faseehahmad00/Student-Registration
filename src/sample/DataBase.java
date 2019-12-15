@@ -48,10 +48,14 @@ public class DataBase {
         }
 
     }
-        public void delete(String cnic) throws SQLException {
+        public void delete(String cnic) {
         connect();
-            Statement statement =  conn.createStatement();
-            statement.execute("DELETE FROM student WHERE cnic= "+cnic);
+            try {
+                Statement statement =  conn.createStatement();
+                statement.execute("DELETE FROM student WHERE cnic= "+cnic);
+            } catch (SQLException e) {
+                System.out.println("unable to remove student");;
+            }
 
         }
 
