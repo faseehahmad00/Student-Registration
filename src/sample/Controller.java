@@ -82,7 +82,7 @@ public class Controller {
         }
     }
 
-    public void openabout() throws IOException {
+    public void openabout(){
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("about.fxml"));
