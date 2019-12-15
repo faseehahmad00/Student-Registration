@@ -11,42 +11,42 @@
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Label>
-        <AnchorPane layoutX="135.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+        <AnchorPane layoutX="136.0" layoutY="256.0" prefHeight="360.0" prefWidth="340.0" style="-fx-border-width: 0px 3px 0px 0px; -fx-border-color: #FF8C00;">
             <children>
-                <Label layoutX="70.0" layoutY="146.0" text="Faseeh Ahmad" textFill="DARKORANGE">
+                <Label layoutX="84.0" layoutY="180.0" text="Faseeh Ahmad" textFill="DARKORANGE">
                     <font>
                         <Font name="Tahoma Bold" size="16.0" />
                     </font>
                 </Label>
-                <Label fx:id="label1" layoutX="46.0" layoutY="245.0" text="&quot;This project Fucked me.&quot;" textFill="DARKORANGE">
+                <Label fx:id="label1" layoutX="38.0" layoutY="326.0" text="&quot;Mein Apki baat smjh gya hun.&quot;" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold Italic" size="14.0" />
                     </font>
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="555.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+        <AnchorPane layoutX="555.0" layoutY="256.0" prefHeight="360.0" prefWidth="340.0" style="-fx-border-width: 0px 3px 0px 0px; -fx-border-color: #ff8c00;">
             <children>
-                <Label layoutX="70.0" layoutY="146.0" text="Ahmed Shabbir" textFill="DARKORANGE">
+                <Label layoutX="82.0" layoutY="180.0" text="Ahmed Shabbir" textFill="DARKORANGE">
                     <font>
                         <Font name="Tahoma Bold" size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="71.0" layoutY="245.0" text="&quot;Krtay hain kuch.&quot;" textFill="DARKORANGE">
+                <Label layoutX="83.0" layoutY="326.0" text="&quot;Krtay hain kuch.&quot;" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold Italic" size="14.0" />
                     </font>
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="993.0" layoutY="243.0" prefHeight="291.0" prefWidth="257.0">
+        <AnchorPane layoutX="994.0" layoutY="256.0" prefHeight="360.0" prefWidth="340.0">
             <children>
-                <Label layoutX="58.0" layoutY="146.0" text="Abdullah Shahzad" textFill="DARKORANGE">
+                <Label layoutX="71.0" layoutY="180.0" text="Abdullah Shahzad" textFill="DARKORANGE">
                     <font>
                         <Font name="Tahoma Bold" size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="13.0" layoutY="246.0" text="&quot;Talk is Cheap, show me the Code;&quot;" textFill="DARKORANGE">
+                <Label layoutX="27.0" layoutY="326.0" text="&quot;Talk is Cheap, show me the Code;&quot;" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold Italic" size="14.0" />
                     </font>
@@ -58,5 +58,20 @@
                 <Font name="System Bold" size="19.0" />
             </font>
         </JFXButton>
+      <Label layoutX="214.0" layoutY="181.0" text="PROGRAMMER" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="655.0" layoutY="181.0" text="DESIGNER" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="1051.0" layoutY="181.0" text="PROJECT MANAGER" textFill="DARKORANGE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
