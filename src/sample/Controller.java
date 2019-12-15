@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -46,10 +48,11 @@ public class Controller {
     @FXML
     private TextField removeid = new TextField();
     @FXML
-    private  Label removemsg = new Label();
+    private Label removemsg = new Label();
     String gender;
     String degree;
     DataBase database = new DataBase();
+
     //buttons,textfields etc
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
@@ -77,6 +80,24 @@ public class Controller {
             System.out.println("Invalid username or password");
             errormsg.setText(">>> invalid username or password");
         }
+    }
+
+    public void openabout() throws IOException {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("about.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
+        } catch (Exception ignored) {
+        }
+    }
+
+    public void onaboutcancel() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
+        } catch (Exception ignored) {}
     }
 //LOGIN FORM END========================================================================================================
 
@@ -168,7 +189,7 @@ public class Controller {
     public void studentremove() throws SQLException {
         if(removeid.getText().isEmpty() || removemsg.getText().length() != 13 )
         {
-            removemsg.setText("enter valid student cnic");
+            removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
         }
         else {
             database.delete(removeid.getText());

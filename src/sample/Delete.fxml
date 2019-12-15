@@ -42,6 +42,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Label fx:id="removemsg" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" />
+      <Label fx:id="removemsg" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
    </children>
 </AnchorPane>

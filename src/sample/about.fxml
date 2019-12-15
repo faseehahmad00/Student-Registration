@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.About">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <Label layoutX="64.0" layoutY="71.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   About" textFill="DARKORANGE">
             <font>
@@ -53,7 +53,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <JFXButton buttonType="RAISED" layoutX="1295.0" prefHeight="62.0" prefWidth="71.0" text="X" textFill="DARKORANGE">
+        <JFXButton buttonType="RAISED" layoutX="1295.0" onAction="#onaboutcancel" prefHeight="62.0" prefWidth="71.0" text="X" textFill="DARKORANGE">
             <font>
                 <Font name="System Bold" size="19.0" />
             </font>
