@@ -58,12 +58,12 @@
                 <Font name="System Bold" size="19.0" />
             </font>
         </JFXButton>
-      <Label layoutX="214.0" layoutY="181.0" text="PROGRAMMER" textFill="DARKORANGE">
+      <Label layoutX="207.0" layoutY="181.0" text="PROGRAMMER" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="655.0" layoutY="181.0" text="DESIGNER" textFill="DARKORANGE">
+      <Label layoutX="640.0" layoutY="181.0" text="DESIGNER" textFill="DARKORANGE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
