@@ -1,5 +1,6 @@
 package sample;
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -49,6 +51,15 @@ public class Controller {
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
+    @FXML
+    private static Label labelM = new Label();
+
+    static{
+        TranslateTransition tt = new TranslateTransition(Duration.INDEFINITE ,labelM);
+        tt.setByX(100);
+        tt.play();
+    }
+
     @FXML
     String gender;
     String degree;
