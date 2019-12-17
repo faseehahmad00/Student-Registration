@@ -19,7 +19,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
-public class Controller implements Initializable {
+public class Controller
+        //implements Initializable
+        {
     @FXML
     private PasswordField passwordField = new PasswordField();
     @FXML
@@ -58,15 +60,35 @@ public class Controller implements Initializable {
     private Label removemsg = new Label();
     @FXML
     private Label label1;
+    @FXML
+    private Label labelname;
+    @FXML
+    private Label labelfname;
+    @FXML
+    private Label labelgender;
+    @FXML
+    private Label labeldegree;
+    @FXML
+    private Label labelphone;
+    @FXML
+    private Label labelmail;
+    @FXML
+    private Label labeladdress;
+    @FXML
+    private Label labelcnic;
+    @FXML
+    private Label labelDOB;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        TranslateTransition tt = new TranslateTransition();
-        tt.setDuration(Duration.seconds(3));
-        tt.setNode(label1);
-        tt.setToX(70);
-        tt.play();
-    }
+
+
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        TranslateTransition tt = new TranslateTransition();
+//        tt.setDuration(Duration.seconds(3));
+//        tt.setNode(label1);
+//        tt.setToX(70);
+//        tt.play();
+//    }
 
     @FXML
     String gender;
@@ -138,11 +160,17 @@ public class Controller implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
-
+        } catch (Exception ignored) { }
     }
 
+    public void ondisplay() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("display.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
+        } catch (Exception ignored) {
+        }
+    }
     public void logout() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
@@ -217,5 +245,21 @@ public class Controller implements Initializable {
             }
     }
 
+//REMOVE FXML END=======================================================================================================
+//Display FXML START====================================================================================================
+     public void getdetails(){
+        labelname.setText("faseeh");
+        labelfname.setText("azhar");
+        labeladdress.setText("377 c1");
+        labelcnic.setText("35202-7617564-9");
+        labeldegree.setText("BSCS");
+        labelgender.setText("male");
+        labelmail.setText("faseehahmad00@gmail.com");
+        labelDOB.setText("21/01/00");
+        labelphone.setText("0324-4682825");
+     }
 
-}
+
+// Display FXML START====================================================================================================
+
+        }

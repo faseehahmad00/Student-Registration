@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <AnchorPane layoutX="91.0" layoutY="225.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
@@ -51,7 +51,7 @@
       </AnchorPane>
       <AnchorPane layoutX="986.0" layoutY="228.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="18.0" layoutY="44.0" prefHeight="243.0" prefWidth="257.0" text="Display Student(s)" textFill="DARKORANGE">
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="18.0" layoutY="44.0" onAction="#ondisplay" prefHeight="243.0" prefWidth="257.0" text="Display Student(s)" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
