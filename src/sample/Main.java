@@ -14,7 +14,7 @@ public class Main extends Application {
 
         Main.primaryStage = primaryStage;
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
         primaryStage.setTitle("WELCOME TO STUDENT REGISTRATION");
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));

@@ -1,10 +1,8 @@
 package sample;
 import com.jfoenix.controls.JFXDatePicker;
-import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,11 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 
 public class Controller
@@ -111,7 +106,7 @@ public class Controller
             errormsg.setText("login Successful");
 
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
             } catch (Exception ignored) {
@@ -129,7 +124,7 @@ public class Controller
     public void openabout(){
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("about.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
@@ -138,7 +133,7 @@ public class Controller
 
     public void onaboutcancel() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {}
@@ -149,7 +144,7 @@ public class Controller
     ///MENU BAR START=======================================================================================================
     public void add() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("regform.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
@@ -167,7 +162,7 @@ public class Controller
 
     public void ondisplay() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("display.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Display.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
@@ -175,7 +170,7 @@ public class Controller
     }
     public void logout() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("signin.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
@@ -188,7 +183,7 @@ public class Controller
     //REGISTRATION FORM START===============================================================================================
     public void oncancel() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
         } catch (Exception ignored) {
@@ -219,7 +214,7 @@ public class Controller
                         ,gender,degree,email.getText(),cnic.getText(),datePicker.getValue().toString());
 
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
                 regsuccess.setText("Student added successfully");
@@ -237,7 +232,7 @@ public class Controller
         if (true) {
             database.delete(removeid.getText());
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
             } catch (Exception ignored) {}
