@@ -78,8 +78,8 @@ public class Controller
     private Label labelcnic;
     @FXML
     private Label labelDOB;
-
-
+    @FXML
+    private TextField detailsid;
 
 //    @Override
 //    public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -248,6 +248,8 @@ public class Controller
 //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
      public void getdetails(){
+        if (!(detailsid.getText().isEmpty()))
+        {
         labelname.setText("faseeh");
         labelfname.setText("azhar");
         labeladdress.setText("377 c1");
@@ -256,7 +258,7 @@ public class Controller
         labelgender.setText("male");
         labelmail.setText("faseehahmad00@gmail.com");
         labelDOB.setText("21/01/00");
-        labelphone.setText("0324-4682825");
+        labelphone.setText("0324-4682825");}
      }
 
 

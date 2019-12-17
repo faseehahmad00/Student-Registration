@@ -14,7 +14,7 @@
         </Label>
         <AnchorPane layoutX="528.0" layoutY="57.0" prefHeight="330.0" prefWidth="311.0">
             <children>
-                <JFXTextField fx:id="removeid" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="Enter student's CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
+                <JFXTextField fx:id="detailsid" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="Enter student's CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
