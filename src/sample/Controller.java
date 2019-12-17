@@ -1,4 +1,5 @@
 package sample;
+
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -12,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.sql.SQLException;
-
 
 public class Controller
         //implements Initializable
@@ -77,6 +77,8 @@ public class Controller
     private Label detailslabel;
     @FXML
     private TextField detailsid;
+    String gender;
+    String degree;                                          //fx components definition.
 
 //    @Override
 //    public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,10 +89,7 @@ public class Controller
 //        tt.play();
 //    }
 
-    @FXML
-    String gender;
-    String degree;
-    DataBase database = new DataBase();
+    DataBase database = new DataBase();      //Object of Database class ...
 
     //buttons,textfields etc
     //LOGIN FORM START======================================================================================================
@@ -109,13 +108,16 @@ public class Controller
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
-            } catch (Exception ignored) {
-            }
-        } else if (textField.getText().isEmpty()) {
+                }
+            catch (Exception ignored) {}
+        }
+        else if (textField.getText().isEmpty()) {
             textField.setPromptText("Enter username");
-        } else if (passwordField.getText().isEmpty()) {
+        }
+        else if (passwordField.getText().isEmpty()) {
             passwordField.setPromptText("Enter password");
-        } else {
+        }
+        else {
             System.out.println("Invalid username or password");
             errormsg.setText(">>> invalid username or password");
         }
@@ -127,8 +129,7 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
     }
 
     public void onaboutcancel() {
@@ -147,9 +148,7 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
-
+        } catch (Exception ignored) {}
     }
 
     public void delete() {
@@ -157,7 +156,7 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) { }
+        } catch (Exception ignored) {}
     }
 
     public void ondisplay() {
@@ -165,17 +164,14 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Display.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
     }
     public void logout() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
-
+        } catch (Exception ignored) {}
     }
 //MENU BAR END==========================================================================================================
 
@@ -186,21 +182,15 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
     }
 
     public void onsaveclicked() throws SQLException {//on pressing save button on registration form.
-        if (male.isSelected()) {
-            gender = "male";}
-        if (female.isSelected()) {
-            gender = "female"; }
-        if (bscs.isSelected()) {
-            degree = "BSCS"; }
-        if (bsse.isSelected()) {
-            degree = "BSSE"; }
-        //  radio button functions
-       // String  date = datePicker.getValue().toString();
+        if (male.isSelected())   { gender = "male";}
+        if (female.isSelected()) { gender = "female";}
+        if (bscs.isSelected())   { degree = "BSCS"; }
+        if (bsse.isSelected())   { degree = "BSSE"; }
+        //  ^^^ radio button functions...........
         if (fname.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
                 || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
                  || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty())
@@ -247,21 +237,21 @@ public class Controller
      public void getdetails(){
         if (!(detailsid.getText().isEmpty()))
         {
-        labelname.setText("faseeh");
-        labelfname.setText("azhar");
-        labeladdress.setText("377 c1");
-        labelcnic.setText("35202-7617564-9");
-        labeldegree.setText("BSCS");
-        labelgender.setText("male");
-        labelmail.setText("faseehahmad00@gmail.com");
-        labelDOB.setText("21/01/00");
-        labelphone.setText("0324-4682825");}
-        else{
+            labelname.setText("faseeh");
+            labelfname.setText("azhar");
+            labeladdress.setText("377 c1");
+            labelcnic.setText("35202-7617564-9");
+            labeldegree.setText("BSCS");
+            labelgender.setText("male");
+            labelmail.setText("faseehahmad00@gmail.com");
+            labelDOB.setText("21/01/00");
+            labelphone.setText("0324-4682825");
+        }
+        else {
             detailslabel.setText("enter valid cnic");
         }
      }
 
 
 // Display FXML START====================================================================================================
-
-        }
+}
