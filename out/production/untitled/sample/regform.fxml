@@ -88,7 +88,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
          <toggleGroup>
-            <ToggleGroup fx:id="gender" />
+            <ToggleGroup fx:id="genderselect" />
          </toggleGroup>
       </JFXRadioButton>
       <JFXRadioButton fx:id="female" layoutX="337.0" layoutY="486.0" text="Female" textFill="DARKORANGE" toggleGroup="$gender">
