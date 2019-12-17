@@ -53,8 +53,8 @@ public class Controller
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
-    @FXML
-    private Label label1;
+//    @FXML
+//    private Label label1;
     @FXML
     private Label labelname;
     @FXML
@@ -227,9 +227,9 @@ public class Controller
 //REGISTRATION FORM END=================================================================================================
  //
 //REMOVE FXML START====================================================================================================
-    public void studentremove() throws SQLException {
+    public void studentremove() {
         boolean condition = (removemsg.getText().length() == 13);
-        if (true) {
+        if (condition) {
             database.delete(removeid.getText());
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
