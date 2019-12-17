@@ -23,7 +23,7 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
     }
     public static void main(String[] args) {
-        launch(args);;
+        launch(args);
     }
 
 }
