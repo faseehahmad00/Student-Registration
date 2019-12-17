@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXRadioButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <Label layoutX="75.0" layoutY="65.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #FF8C00;" text="   Add New Student" textFill="DARKORANGE">
             <font>
@@ -91,7 +87,7 @@
             <ToggleGroup fx:id="genderselect" />
          </toggleGroup>
       </JFXRadioButton>
-      <JFXRadioButton fx:id="female" layoutX="337.0" layoutY="486.0" text="Female" textFill="DARKORANGE" toggleGroup="$gender">
+      <JFXRadioButton fx:id="female" layoutX="337.0" layoutY="486.0" text="Female" textFill="DARKORANGE" toggleGroup="$genderselect">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
