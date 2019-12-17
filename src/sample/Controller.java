@@ -79,6 +79,8 @@ public class Controller
     @FXML
     private Label labelDOB;
     @FXML
+    private Label detailslabel;
+    @FXML
     private TextField detailsid;
 
 //    @Override
@@ -259,6 +261,9 @@ public class Controller
         labelmail.setText("faseehahmad00@gmail.com");
         labelDOB.setText("21/01/00");
         labelphone.setText("0324-4682825");}
+        else{
+            detailslabel.setText("enter valid cnic");
+        }
      }
 
 
