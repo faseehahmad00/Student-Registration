@@ -1,18 +1,25 @@
 package sample;
 import com.jfoenix.controls.JFXDatePicker;
+import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
-import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
-public class Controller {
+public class Controller implements Initializable {
     @FXML
     private PasswordField passwordField = new PasswordField();
     @FXML
@@ -49,6 +56,18 @@ public class Controller {
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
+    @FXML
+    private Label label1;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        TranslateTransition tt = new TranslateTransition();
+        tt.setDuration(Duration.seconds(3));
+        tt.setNode(label1);
+        tt.setToX(70);
+        tt.play();
+    }
+
     @FXML
     String gender;
     String degree;
