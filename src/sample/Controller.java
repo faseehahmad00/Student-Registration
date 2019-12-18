@@ -235,6 +235,7 @@ public class Controller
 //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
      public void getdetails(){
+        database.display();
         if (!(detailsid.getText().isEmpty()))
         {
             labelname.setText("faseeh");

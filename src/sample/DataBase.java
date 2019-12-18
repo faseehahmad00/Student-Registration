@@ -59,6 +59,16 @@ public class DataBase {
 
         }
 
-
+        public void display()
+        {
+            connect();
+            try {
+                Statement statement = conn.createStatement();
+                statement.execute("SELECT name,fname FROM student WHERE cnic=3620276175649 ");
+                System.out.println("name");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
 }
