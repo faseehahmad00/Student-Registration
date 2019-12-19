@@ -25,7 +25,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="212.0" onAction="#studentremove" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Remove">
+            <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="212.0" onAction="#removestudent" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Remove">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

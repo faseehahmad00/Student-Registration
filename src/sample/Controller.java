@@ -15,14 +15,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Controller {
+
+    String gender;
+    String degree;
+    DataBase database = new DataBase();
     @FXML
-    private PasswordField passwordField = new PasswordField();
+    JFXDatePicker datePicker = new JFXDatePicker();
     @FXML
-    private TextField textField = new TextField();
+    private PasswordField password = new PasswordField();
+    @FXML
+    private TextField username = new TextField();
     @FXML
     private TextField name = new TextField();
     @FXML
-    private TextField fname = new TextField();
+    private TextField fathername = new TextField();
     @FXML
     private TextField email = new TextField();
     @FXML
@@ -34,19 +40,15 @@ public class Controller {
     @FXML
     private Text errormsg = new Text();
     @FXML
-    private Label emptyfield = new Label();
+    private Label registration_error = new Label();
     @FXML
     private RadioButton male = new RadioButton();
     @FXML
     private RadioButton female = new RadioButton();
     @FXML
-    JFXDatePicker datePicker = new JFXDatePicker();
-    @FXML
     private RadioButton bsse = new RadioButton();
     @FXML
     private RadioButton bscs = new RadioButton();
-    @FXML
-    private Label regsuccess = new Label();
     @FXML
     private TextField removeid = new TextField();
     @FXML
@@ -70,15 +72,9 @@ public class Controller {
     @FXML
     private Label labelDOB;
     @FXML
-    private Label detailslabel;
+    private Label display_error;
     @FXML
-    private Label namelabel;
-    @FXML
-    private TextField detailsid;
-    String gender;
-    String degree;
-
-    DataBase database = new DataBase();      //Object of Database class ...
+    private TextField display_cnic;
 
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
@@ -88,23 +84,20 @@ public class Controller {
     public void onclick() {
         String passcode = "";
         String username = "";
-        if (passcode.equals(passwordField.getText()) && username.equals(textField.getText())) {
+        if (passcode.equals(password.getText()) && username.equals(this.username.getText())) {
             System.out.println("login successful");
             errormsg.setText("login Successful");
-
-
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
             } catch (Exception ignored) {
             }
-            ;
 
-        } else if (textField.getText().isEmpty()) {
-            textField.setPromptText("Enter username");
-        } else if (passwordField.getText().isEmpty()) {
-            passwordField.setPromptText("Enter password");
+        } else if (this.username.getText().isEmpty()) {
+            this.username.setPromptText("Enter username");
+        } else if (password.getText().isEmpty()) {
+            password.setPromptText("Enter password");
         } else {
             System.out.println("Invalid username or password");
             errormsg.setText(">>> invalid username or password");
@@ -133,7 +126,7 @@ public class Controller {
 
 
     ///MENU BAR START=======================================================================================================
-    public void add() {
+    public void addstudent() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
@@ -142,7 +135,7 @@ public class Controller {
         }
     }
 
-    public void delete() {
+    public void deletestudent() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
@@ -151,7 +144,7 @@ public class Controller {
         }
     }
 
-    public void ondisplay() {
+    public void displaystudent() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Display.fxml"));
             Main.primaryStage.setScene(new Scene(root));
@@ -170,8 +163,7 @@ public class Controller {
     }
 //MENU BAR END==========================================================================================================
 
-
-    //REGISTRATION FORM START===============================================================================================
+//REGISTRATION FORM START===============================================================================================
     public void oncancel() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
@@ -181,7 +173,7 @@ public class Controller {
         }
     }
 
-    public void onsaveclicked() {//on pressing save button on registration form.
+    public void enrollstudent() {//on pressing save button on registration form.
         if (male.isSelected()) {
             gender = "male";
         }
@@ -195,16 +187,16 @@ public class Controller {
             degree = "BSSE";
         }
         //  ^^^ radio button functions...........
-        if (fname.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
+        if (fathername.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
                 || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
-                || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty()) {
-            emptyfield.setText("please fill all reqiured fields to continue");
+                || degree.isEmpty() || gender.isEmpty() || fathername.getText().isEmpty()) {
+            registration_error.setText("please fill all reqiured fields to continue");
         } else {
             if (cnic.getText().length() != 13) {
-                emptyfield.setText("enter your cnic correctly without -.it must contain only 13 letters");
+                registration_error.setText("enter your cnic correctly without -.it must contain only 13 letters");
             } else {
                 try {
-                    database.insert(name.getText(), fname.getText(), address.getText(), phone.getText()
+                    database.insert(name.getText(), fathername.getText(), address.getText(), phone.getText()
                             , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -214,8 +206,6 @@ public class Controller {
                     Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                     Main.primaryStage.setScene(new Scene(root));
                     Main.primaryStage.setFullScreen(true);
-                    regsuccess.setText("Student added successfully");
-
                 } catch (Exception ignored) {
                 }
             }
@@ -225,7 +215,7 @@ public class Controller {
     //REGISTRATION FORM END=================================================================================================
     //
 //REMOVE FXML START====================================================================================================
-    public void studentremove() {
+    public void removestudent() {
         boolean condition = (removeid
                 .getText().length() == 13);
         if (condition) {
@@ -243,27 +233,27 @@ public class Controller {
 
     //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
-    public void getdetails() {
-        if (!(detailsid.getText().isEmpty())) {
+    public void displaydetails() {
+        if (!(display_cnic.getText().isEmpty())) {
             ArrayList<String> student = null;
             try {
-                student = database.display(detailsid.getText());
+                student = database.display(display_cnic.getText());
             } catch (Exception e) {
                 System.out.println("unable to display");
             }
             if (student.size() > 0) {
-                labelname.setText   ("Name:"+"\t\t\t\t\t"+student.get(0));
-                labelfname.setText  ("Father Name:"+"\t\t\t\t"+student.get(1));
-                labelphone.setText  ("Phone:"+"\t\t\t\t\t"+student.get(2));
-                labeladdress.setText("Address:"+"\t\t\t\t\t"+student.get(3));
-                labeldegree.setText ("Degree:"+"\t\t\t\t\t"+student.get(4));
-                labelgender.setText ("Gender:"+"\t\t\t\t\t"+student.get(5));
-                labelmail.setText   ("Email:"+"\t\t\t\t\t"+student.get(6));
-                labelcnic.setText   ("CNIC:"+"\t\t\t\t\t"+student.get(7));
-                labelDOB.setText    ("DOB:"+"\t\t\t\t\t"+student.get(8));
+                labelname.setText("Name:" + "\t\t\t\t\t" + student.get(0));
+                labelfname.setText("Father Name:" + "\t\t\t\t" + student.get(1));
+                labelphone.setText("Phone:" + "\t\t\t\t\t" + student.get(2));
+                labeladdress.setText("Address:" + "\t\t\t\t\t" + student.get(3));
+                labeldegree.setText("Degree:" + "\t\t\t\t\t" + student.get(4));
+                labelgender.setText("Gender:" + "\t\t\t\t\t" + student.get(5));
+                labelmail.setText("Email:" + "\t\t\t\t\t" + student.get(6));
+                labelcnic.setText("CNIC:" + "\t\t\t\t\t" + student.get(7));
+                labelDOB.setText("DOB:" + "\t\t\t\t\t" + student.get(8));
             }
         } else {
-            detailslabel.setText("enter valid cnic");
+            display_error.setText("enter valid cnic");
         }
 
 

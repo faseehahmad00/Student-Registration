@@ -10,7 +10,7 @@
     <children>
         <AnchorPane layoutX="91.0" layoutY="225.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="41.0" layoutY="50.0" onAction="#add" prefHeight="243.0" prefWidth="218.0" text="Add Student(s)" textFill="DARKORANGE">
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="41.0" layoutY="50.0" onAction="#addstudent" prefHeight="243.0" prefWidth="218.0" text="Add Student(s)" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -38,7 +38,7 @@
         </JFXButton>
       <AnchorPane layoutX="537.0" layoutY="228.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="40.0" layoutY="48.0" onAction="#delete" prefHeight="243.0" prefWidth="234.0" text="Remove Student(s)" textFill="DARKORANGE">
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="40.0" layoutY="48.0" onAction="#deletestudent" prefHeight="243.0" prefWidth="234.0" text="Remove Student(s)" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -51,7 +51,7 @@
       </AnchorPane>
       <AnchorPane layoutX="986.0" layoutY="228.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
-                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="18.0" layoutY="44.0" onAction="#ondisplay" prefHeight="243.0" prefWidth="257.0" text="View Details" textFill="DARKORANGE">
+                <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="18.0" layoutY="44.0" onAction="#displaystudent" prefHeight="243.0" prefWidth="257.0" text="View Details" textFill="DARKORANGE">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>

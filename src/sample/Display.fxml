@@ -15,12 +15,12 @@
         </Label>
         <AnchorPane layoutX="528.0" layoutY="57.0" prefHeight="264.0" prefWidth="311.0">
             <children>
-                <JFXTextField fx:id="detailsid" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="Enter student's CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
+                <JFXTextField fx:id="display_cnic" focusColor="DARKORANGE" labelFloat="true" layoutX="15.0" layoutY="114.0" prefHeight="25.0" prefWidth="282.0" promptText="Enter student's CNIC" style="-fx-text-fill: white;" unFocusColor="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXTextField>
-                <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="182.0" onAction="#getdetails" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Get Details">
+                <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="182.0" onAction="#displaydetails" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Get Details">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -32,7 +32,7 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <Label fx:id="removemsg" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
+        <Label fx:id="display_error" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
       <AnchorPane layoutY="317.0" prefHeight="454.0" prefWidth="1366.0">
          <children>
             <Label fx:id="labelname" layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">

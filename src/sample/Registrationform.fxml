@@ -11,7 +11,7 @@
             <font>
                 <Font name="System Bold" size="18.0" />
             </font></Label>
-        <JFXTextField fx:id="fname" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="190.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
+        <JFXTextField fx:id="fathername" focusColor="DARKORANGE" labelFloat="true" layoutX="835.0" layoutY="190.0" prefHeight="25.0" prefWidth="282.0" promptText="Father Name" style="-fx-text-fill: white;" unFocusColor="WHITE">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
@@ -32,7 +32,7 @@
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXTextField>
-        <JFXButton buttonType="RAISED" layoutX="492.0" layoutY="683.0" onAction="#onsaveclicked" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Enroll Now">
+        <JFXButton buttonType="RAISED" layoutX="492.0" layoutY="683.0" onAction="#enrollstudent" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FF8C00;" text="Enroll Now">
             <font>
                 <Font name="System Bold" size="14.0" />
             </font></JFXButton>
@@ -45,7 +45,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <Label fx:id="emptyfield" layoutX="148.0" layoutY="619.0" prefHeight="95.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" textFill="DARKORANGE" />
+      <Label fx:id="registration_error" layoutX="148.0" layoutY="619.0" prefHeight="95.0" prefWidth="305.0" style="-fx-text-fill: #FF8C00;" textFill="DARKORANGE" />
       <Label layoutX="160.0" layoutY="536.0" prefHeight="22.0" prefWidth="124.0" style="-fx-text-fill: #FF8C00;" text="Select Degree :">
          <font>
             <Font name="Tahoma Bold" size="14.0" />
