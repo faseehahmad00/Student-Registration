@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Controller {
@@ -23,7 +22,7 @@ public class Controller {
     @FXML
     private PasswordField password;
     @FXML
-    private TextField username,name,fathername,email,phone,address,cnic,removeid,removemsg, display_cnic;
+    private TextField username,name,fathername,email,phone,address,cnic,removeid,display_cnic;
     @FXML
     private Label signup_error,registration_error,display_error,remove_error;
     @FXML
@@ -178,7 +177,8 @@ public class Controller {
             } catch (Exception ignored) {
             }
         } else {
-            removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
+            remove_error.setText("This cnic doesn't exist.Please enter valid student cnic");
+
         }
     }
 
