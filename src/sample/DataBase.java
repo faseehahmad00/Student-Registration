@@ -1,5 +1,6 @@
 package sample;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DataBase {
     Connection conn = null;
@@ -59,16 +60,33 @@ public class DataBase {
 
         }
 
-        public void display()
+        public ArrayList<String> display(String cnic)
         {
+            ArrayList<String> arr = new ArrayList<>();
             connect();
             try {
                 Statement statement = conn.createStatement();
-                statement.execute("SELECT name,fname FROM student WHERE cnic=3620276175649 ");
-                System.out.println("name");
+                ResultSet rs = statement.executeQuery("SELECT name,fname,phone,address,degree,gender,email,cnic,DOB"
+                        + " FROM student WHERE cnic=" + cnic + ";");
+                //statement.execute("SELECT name,fname FROM student WHERE cnic=" + cnic + ";");
+                while (rs.next())
+                {
+                    arr.add(rs.getString("name"));
+                    arr.add(rs.getString("fname"));
+                    arr.add(rs.getString("phone"));
+                    arr.add(rs.getString("address"));
+                    arr.add(rs.getString("degree"));
+                    arr.add(rs.getString("gender"));
+                    arr.add(rs.getString("email"));
+                    arr.add(rs.getString("cnic"));
+                    arr.add(rs.getString("DOB"));
+                    return arr;
+                }
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            return arr;
         }
 
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black; -fx-text-fill: #ff8c00;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: black; -fx-text-fill: #ff8c00;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <Label layoutX="65.0" layoutY="73.0" style="-fx-border-width: 0px 0px 0px 3px; -fx-border-color: #ff8c00;" text="Display Student's Details." textFill="DARKORANGE">
             <font>
@@ -32,7 +33,7 @@
             </font>
         </JFXButton>
         <Label fx:id="removemsg" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
-      <AnchorPane layoutX="14.0" layoutY="323.0" prefHeight="448.0" prefWidth="118.0">
+      <AnchorPane fx:id="anchorPane" layoutX="14.0" layoutY="323.0" prefHeight="448.0" prefWidth="118.0">
          <children>
             <Label layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="85.0" text="Name:" textFill="DARKORANGE" />
             <Label layoutX="22.0" layoutY="280.0" prefHeight="17.0" prefWidth="85.0" text="Phone:" textFill="DARKORANGE" />
@@ -45,7 +46,7 @@
             <Label layoutX="22.0" layoutY="173.0" prefHeight="17.0" prefWidth="85.0" text="E-mail" textFill="DARKORANGE" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="165.0" layoutY="275.0" prefHeight="496.0" prefWidth="1201.0">
+      <AnchorPane layoutX="161.0" layoutY="323.0" prefHeight="448.0" prefWidth="1205.0">
          <children>
             <Label fx:id="labelname" layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
             <Label fx:id="labelphone" layoutX="22.0" layoutY="280.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />

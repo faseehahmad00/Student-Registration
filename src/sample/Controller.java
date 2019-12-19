@@ -10,13 +10,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Controller
         //implements Initializable
-        {
+{
     @FXML
     private PasswordField passwordField = new PasswordField();
     @FXML
@@ -53,7 +56,7 @@ public class Controller
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
-//    @FXML
+    //    @FXML
 //    private Label label1;
     @FXML
     private Label labelname;
@@ -77,6 +80,10 @@ public class Controller
     private Label detailslabel;
     @FXML
     private TextField detailsid;
+    @FXML
+    private AnchorPane anchorPane = new AnchorPane() {{
+        setVisible(false);
+    }};
     String gender;
     String degree;                                          //fx components definition.
 
@@ -91,7 +98,6 @@ public class Controller
 
     DataBase database = new DataBase();      //Object of Database class ...
 
-    //buttons,textfields etc
     //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
@@ -104,32 +110,33 @@ public class Controller
             System.out.println("login successful");
             errormsg.setText("login Successful");
 
+
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
-                }
-            catch (Exception ignored) {}
-        }
-        else if (textField.getText().isEmpty()) {
+            } catch (Exception ignored) {
+            }
+            ;
+
+        } else if (textField.getText().isEmpty()) {
             textField.setPromptText("Enter username");
-        }
-        else if (passwordField.getText().isEmpty()) {
+        } else if (passwordField.getText().isEmpty()) {
             passwordField.setPromptText("Enter password");
-        }
-        else {
+        } else {
             System.out.println("Invalid username or password");
             errormsg.setText(">>> invalid username or password");
         }
     }
 
-    public void openabout(){
+    public void openabout() {
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("About.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     public void onaboutcancel() {
@@ -137,7 +144,8 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 //LOGIN FORM END========================================================================================================
 
@@ -148,7 +156,8 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     public void delete() {
@@ -156,7 +165,8 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     public void ondisplay() {
@@ -164,14 +174,17 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Display.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
+
     public void logout() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 //MENU BAR END==========================================================================================================
 
@@ -182,76 +195,98 @@ public class Controller
             Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
-    public void onsaveclicked() throws SQLException {//on pressing save button on registration form.
-        if (male.isSelected())   { gender = "male";}
-        if (female.isSelected()) { gender = "female";}
-        if (bscs.isSelected())   { degree = "BSCS"; }
-        if (bsse.isSelected())   { degree = "BSSE"; }
+    public void onsaveclicked() {//on pressing save button on registration form.
+        if (male.isSelected()) {
+            gender = "male";
+        }
+        if (female.isSelected()) {
+            gender = "female";
+        }
+        if (bscs.isSelected()) {
+            degree = "BSCS";
+        }
+        if (bsse.isSelected()) {
+            degree = "BSSE";
+        }
         //  ^^^ radio button functions...........
         if (fname.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
                 || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
-                 || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty())
-        {emptyfield.setText("please fill all reqiured fields to continue"); }
-        else {
-            if (cnic.getText().length() != 13)
-            {emptyfield.setText("enter your cnic correctly without -.it must contain only 13 letters");}
+                || degree.isEmpty() || gender.isEmpty() || fname.getText().isEmpty()) {
+            emptyfield.setText("please fill all reqiured fields to continue");
+        } else {
+            if (cnic.getText().length() != 13) {
+                emptyfield.setText("enter your cnic correctly without -.it must contain only 13 letters");
+            } else {
+                try {
+                    database.insert(name.getText(), fname.getText(), address.getText(), phone.getText()
+                            , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
 
-            else{
-            database.insert(name.getText(),fname.getText(),address.getText(),phone.getText()
-                        ,gender,degree,email.getText(),cnic.getText(),datePicker.getValue().toString());
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
+                    Main.primaryStage.setScene(new Scene(root));
+                    Main.primaryStage.setFullScreen(true);
+                    regsuccess.setText("Student added successfully");
 
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
-                Main.primaryStage.setScene(new Scene(root));
-                Main.primaryStage.setFullScreen(true);
-                regsuccess.setText("Student added successfully");
-
-            } catch (Exception ignored) {
+                } catch (Exception ignored) {
+                }
             }
-        }}
+        }
     }
 
-//REGISTRATION FORM END=================================================================================================
- //
+    //REGISTRATION FORM END=================================================================================================
+    //
 //REMOVE FXML START====================================================================================================
     public void studentremove() {
-        boolean condition = (removemsg.getText().length() == 13);
+        boolean condition = (removeid
+                .getText().length() == 13);
         if (condition) {
             database.delete(removeid.getText());
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
                 Main.primaryStage.setFullScreen(true);
-            } catch (Exception ignored) {}
-        }
-            else {
-                 removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
+            } catch (Exception ignored) {
             }
+        } else {
+            removemsg.setText("This cnic doesn't exist.Please enter valid student cnic");
+        }
     }
 
-//REMOVE FXML END=======================================================================================================
+    //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
-     public void getdetails(){
-        database.display();
-        if (!(detailsid.getText().isEmpty()))
-        {
-            labelname.setText("faseeh");
-            labelfname.setText("azhar");
-            labeladdress.setText("377 c1");
-            labelcnic.setText("35202-7617564-9");
-            labeldegree.setText("BSCS");
-            labelgender.setText("male");
-            labelmail.setText("faseehahmad00@gmail.com");
-            labelDOB.setText("21/01/00");
-            labelphone.setText("0324-4682825");
-        }
-        else {
+    public void getdetails() {
+        if (!(detailsid.getText().isEmpty())) {
+            ArrayList<String> student = null;
+            try {
+                student = database.display(detailsid.getText());
+            } catch (Exception e) {
+                System.out.println("unable to display");
+            }
+            if (student.size() > 0) {
+                anchorPane.setVisible(true);
+                labelname.setText(student.get(0));
+                labelfname.setText(student.get(1));
+                labelphone.setText(student.get(2));
+                labeladdress.setText(student.get(3));
+                labeldegree.setText(student.get(4));
+                labelgender.setText(student.get(5));
+                labelmail.setText(student.get(6));
+                labelcnic.setText(student.get(7));
+                labelDOB.setText(student.get(8));
+            }
+        } else {
             detailslabel.setText("enter valid cnic");
         }
-     }
+
+
+    }
 
 
 // Display FXML START====================================================================================================
