@@ -10,16 +10,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Controller
-        //implements Initializable
-{
+public class Controller {
     @FXML
     private PasswordField passwordField = new PasswordField();
     @FXML
@@ -56,8 +51,6 @@ public class Controller
     private TextField removeid = new TextField();
     @FXML
     private Label removemsg = new Label();
-    //    @FXML
-//    private Label label1;
     @FXML
     private Label labelname;
     @FXML
@@ -82,21 +75,8 @@ public class Controller
     private Label namelabel;
     @FXML
     private TextField detailsid;
-    @FXML
-    private AnchorPane anchorPane = new AnchorPane() {{
-        setVisible(false);
-    }};
     String gender;
-    String degree;                                          //fx components definition.
-
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        TranslateTransition tt = new TranslateTransition();
-//        tt.setDuration(Duration.seconds(3));
-//        tt.setNode(label1);
-//        tt.setToX(70);
-//        tt.play();
-//    }
+    String degree;
 
     DataBase database = new DataBase();      //Object of Database class ...
 
@@ -272,7 +252,6 @@ public class Controller
                 System.out.println("unable to display");
             }
             if (student.size() > 0) {
-                anchorPane.setVisible(true);
                 labelname.setText   ("Name:"+"\t\t\t\t\t"+student.get(0));
                 labelfname.setText  ("Father Name:"+"\t\t\t\t"+student.get(1));
                 labelphone.setText  ("Phone:"+"\t\t\t\t\t"+student.get(2));
