@@ -79,6 +79,8 @@ public class Controller
     @FXML
     private Label detailslabel;
     @FXML
+    private Label namelabel;
+    @FXML
     private TextField detailsid;
     @FXML
     private AnchorPane anchorPane = new AnchorPane() {{
@@ -271,15 +273,15 @@ public class Controller
             }
             if (student.size() > 0) {
                 anchorPane.setVisible(true);
-                labelname.setText(student.get(0));
-                labelfname.setText(student.get(1));
-                labelphone.setText(student.get(2));
-                labeladdress.setText(student.get(3));
-                labeldegree.setText(student.get(4));
-                labelgender.setText(student.get(5));
-                labelmail.setText(student.get(6));
-                labelcnic.setText(student.get(7));
-                labelDOB.setText(student.get(8));
+                labelname.setText   ("Name:"+"\t\t\t\t\t"+student.get(0));
+                labelfname.setText  ("Father Name:"+"\t\t\t\t"+student.get(1));
+                labelphone.setText  ("Phone:"+"\t\t\t\t\t"+student.get(2));
+                labeladdress.setText("Address:"+"\t\t\t\t\t"+student.get(3));
+                labeldegree.setText ("Degree:"+"\t\t\t\t\t"+student.get(4));
+                labelgender.setText ("Gender:"+"\t\t\t\t\t"+student.get(5));
+                labelmail.setText   ("Email:"+"\t\t\t\t\t"+student.get(6));
+                labelcnic.setText   ("CNIC:"+"\t\t\t\t\t"+student.get(7));
+                labelDOB.setText    ("DOB:"+"\t\t\t\t\t"+student.get(8));
             }
         } else {
             detailslabel.setText("enter valid cnic");

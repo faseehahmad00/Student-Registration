@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXTextField>
-                <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="182.0" onAction="#getdetails" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="show results">
+                <JFXButton buttonType="RAISED" layoutX="15.0" layoutY="182.0" onAction="#getdetails" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Get Details">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -33,36 +33,49 @@
             </font>
         </JFXButton>
         <Label fx:id="removemsg" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
-      <AnchorPane fx:id="anchorPane" layoutX="14.0" layoutY="323.0" prefHeight="448.0" prefWidth="118.0">
+      <AnchorPane layoutY="317.0" prefHeight="454.0" prefWidth="1366.0">
          <children>
-            <Label layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="85.0" text="Name:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="280.0" prefHeight="17.0" prefWidth="85.0" text="Phone:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="42.0" prefHeight="17.0" prefWidth="85.0" text="Father Name:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="77.0" prefHeight="17.0" prefWidth="85.0" text="Cnic:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="110.0" prefHeight="17.0" prefWidth="85.0" text="DOB" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="145.0" prefHeight="17.0" prefWidth="85.0" text="Address" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="242.0" prefHeight="17.0" prefWidth="85.0" text="Degree:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="207.0" prefHeight="17.0" prefWidth="85.0" text="Gender:" textFill="DARKORANGE" />
-            <Label layoutX="22.0" layoutY="173.0" prefHeight="17.0" prefWidth="85.0" text="E-mail" textFill="DARKORANGE" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="161.0" layoutY="323.0" prefHeight="448.0" prefWidth="1205.0">
-         <children>
-            <Label fx:id="labelname" layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelphone" layoutX="22.0" layoutY="280.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelfname" layoutX="22.0" layoutY="42.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelcnic" layoutX="22.0" layoutY="77.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelDOB" layoutX="22.0" layoutY="110.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labeladdress" layoutX="22.0" layoutY="145.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labeldegree" layoutX="22.0" layoutY="242.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelgender" layoutX="22.0" layoutY="207.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
-            <Label fx:id="labelmail" layoutX="22.0" layoutY="173.0" prefHeight="17.0" prefWidth="436.0" textFill="DARKORANGE" />
+            <Label fx:id="labelname" layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelphone" layoutX="22.0" layoutY="280.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelfname" layoutX="22.0" layoutY="42.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelcnic" layoutX="22.0" layoutY="77.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelDOB" layoutX="22.0" layoutY="110.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labeladdress" layoutX="22.0" layoutY="145.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labeldegree" layoutX="22.0" layoutY="242.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelgender" layoutX="22.0" layoutY="207.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Label fx:id="labelmail" layoutX="22.0" layoutY="173.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
                 <JFXButton buttonType="RAISED" layoutX="857.0" layoutY="371.0" onAction="#oncancel" prefHeight="25.0" prefWidth="282.0" ripplerFill="WHITE" style="-fx-background-color: #ff8c00;" text="Cancel">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
-            <Label fx:id="detailslabel" layoutX="378.0" layoutY="19.0" prefHeight="17.0" prefWidth="282.0" textFill="DARKORANGE" />
          </children>
       </AnchorPane>
     </children>
