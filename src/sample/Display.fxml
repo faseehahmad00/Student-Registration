@@ -32,8 +32,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </JFXButton>
-        <Label fx:id="display_error" layoutX="65.0" layoutY="671.0" prefHeight="17.0" prefWidth="474.0" textFill="DARKORANGE" />
-      <AnchorPane layoutY="317.0" prefHeight="454.0" prefWidth="1366.0">
+        <Label fx:id="display_error" layoutX="11.0" layoutY="671.0" prefHeight="17.0" prefWidth="528.0" textFill="DARKORANGE" />
+      <AnchorPane layoutX="1.0" layoutY="310.0" prefHeight="454.0" prefWidth="1366.0">
          <children>
             <Label fx:id="labelname" layoutX="22.0" layoutY="10.0" prefHeight="17.0" prefWidth="614.0" textFill="DARKORANGE">
                <font>

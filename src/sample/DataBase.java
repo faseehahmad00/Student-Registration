@@ -20,7 +20,7 @@ public class DataBase {
 
 //
     public void insert(String name,String fname,String address,String phone,String gender,String degree,
-                       String email,String cnic,String DOB) throws SQLException {
+                       String email,String cnic,String DOB){
         try {
             connect();
             Statement statement = conn.createStatement();
@@ -55,7 +55,7 @@ public class DataBase {
                 Statement statement =  conn.createStatement();
                 statement.execute("DELETE FROM student WHERE cnic= "+cnic);
             } catch (SQLException e) {
-                System.out.println("unable to remove student");;
+                System.out.println("unable to remove student");
             }
 
         }
@@ -68,9 +68,6 @@ public class DataBase {
                 Statement statement = conn.createStatement();
                 ResultSet rs = statement.executeQuery("SELECT name,fname,phone,address,degree,gender,email,cnic,DOB"
                         + " FROM student WHERE cnic=" + cnic + ";");
-                //statement.execute("SELECT name,fname FROM student WHERE cnic=" + cnic + ";");
-                while (rs.next())
-                {
                     arr.add(rs.getString("name"));
                     arr.add(rs.getString("fname"));
                     arr.add(rs.getString("phone"));
@@ -80,11 +77,7 @@ public class DataBase {
                     arr.add(rs.getString("email"));
                     arr.add(rs.getString("cnic"));
                     arr.add(rs.getString("DOB"));
-                    return arr;
-                }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } catch (SQLException ignored) {
             }
             return arr;
         }

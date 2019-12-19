@@ -150,12 +150,8 @@ public class Controller {
             if (cnic.getText().length() != 13) {
                 registration_error.setText("enter your cnic correctly without -.it must contain only 13 letters");
             } else {
-                try {
-                    database.insert(name.getText(), fathername.getText(), address.getText(), phone.getText()
-                            , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                database.insert(name.getText(), fathername.getText(), address.getText(), phone.getText()
+                        , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
 
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
@@ -189,7 +185,7 @@ public class Controller {
 //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
     public void displaydetails() {
-        if (!(display_cnic.getText().isEmpty())) {
+        if (display_cnic.getText().length() == 13) {
             ArrayList<String> student = null;
             try {
                 student = database.display(display_cnic.getText());
@@ -198,6 +194,7 @@ public class Controller {
             }
             assert student != null;
             if (student.size() > 0) {
+                display_error.setText("record found");
                   labelname.setText("Name:" +      "\t\t\t\t\t" + student.get(0));
                     labelfname.setText("Father Name:"  +    "\t\t\t\t" + student.get(1));
                       labelphone.setText("Phone:" +           "\t\t\t\t\t" + student.get(2));
@@ -208,11 +205,14 @@ public class Controller {
                     labelcnic.setText("CNIC:" +           "\t\t\t\t\t" + student.get(7));
                   labelDOB.setText("DOB:" +        "\t\t\t\t\t" + student.get(8));
             }
+            else {
+                display_error.setText("Student not found.Enter registered CNIC");
+            }
         } else {
             display_error.setText("enter valid cnic");
         }
     }
 
 
-// Display FXML START====================================================================================================
+// Display FXML END====================================================================================================
 }
