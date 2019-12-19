@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,63 +19,19 @@ public class Controller {
     String degree;
     DataBase database = new DataBase();
     @FXML
-    JFXDatePicker datePicker = new JFXDatePicker();
+    JFXDatePicker datePicker;
     @FXML
-    private PasswordField password = new PasswordField();
+    private PasswordField password;
     @FXML
-    private TextField username = new TextField();
+    private TextField username,name,fathername,email,phone,address,cnic,removeid,removemsg, display_cnic;
     @FXML
-    private TextField name = new TextField();
+    private Label signup_error,registration_error,display_error,remove_error;
     @FXML
-    private TextField fathername = new TextField();
+    private RadioButton male,female,bsse,bscs;
     @FXML
-    private TextField email = new TextField();
-    @FXML
-    private TextField phone = new TextField();
-    @FXML
-    private TextField address = new TextField();
-    @FXML
-    private TextField cnic = new TextField();
-    @FXML
-    private Text errormsg = new Text();
-    @FXML
-    private Label registration_error = new Label();
-    @FXML
-    private RadioButton male = new RadioButton();
-    @FXML
-    private RadioButton female = new RadioButton();
-    @FXML
-    private RadioButton bsse = new RadioButton();
-    @FXML
-    private RadioButton bscs = new RadioButton();
-    @FXML
-    private TextField removeid = new TextField();
-    @FXML
-    private Label removemsg = new Label();
-    @FXML
-    private Label labelname;
-    @FXML
-    private Label labelfname;
-    @FXML
-    private Label labelgender;
-    @FXML
-    private Label labeldegree;
-    @FXML
-    private Label labelphone;
-    @FXML
-    private Label labelmail;
-    @FXML
-    private Label labeladdress;
-    @FXML
-    private Label labelcnic;
-    @FXML
-    private Label labelDOB;
-    @FXML
-    private Label display_error;
-    @FXML
-    private TextField display_cnic;
+    private Label labelname,labelfname,labelgender,labeldegree,labelphone,labelmail,labeladdress,labelcnic,labelDOB;
 
-    //LOGIN FORM START======================================================================================================
+//LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
     }
@@ -86,7 +41,7 @@ public class Controller {
         String username = "";
         if (passcode.equals(password.getText()) && username.equals(this.username.getText())) {
             System.out.println("login successful");
-            errormsg.setText("login Successful");
+            signup_error.setText("login Successful");
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                 Main.primaryStage.setScene(new Scene(root));
@@ -100,7 +55,7 @@ public class Controller {
             password.setPromptText("Enter password");
         } else {
             System.out.println("Invalid username or password");
-            errormsg.setText(">>> invalid username or password");
+            signup_error.setText(">>> invalid username or password");
         }
     }
 
@@ -125,7 +80,7 @@ public class Controller {
 //LOGIN FORM END========================================================================================================
 
 
-    ///MENU BAR START=======================================================================================================
+//MENU BAR START========================================================================================================
     public void addstudent() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
@@ -212,9 +167,9 @@ public class Controller {
         }
     }
 
-    //REGISTRATION FORM END=================================================================================================
-    //
-//REMOVE FXML START====================================================================================================
+//REGISTRATION FORM END=================================================================================================
+
+//REMOVE FXML START=====================================================================================================
     public void removestudent() {
         boolean condition = (removeid
                 .getText().length() == 13);
@@ -231,7 +186,7 @@ public class Controller {
         }
     }
 
-    //REMOVE FXML END=======================================================================================================
+//REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
     public void displaydetails() {
         if (!(display_cnic.getText().isEmpty())) {
@@ -241,22 +196,21 @@ public class Controller {
             } catch (Exception e) {
                 System.out.println("unable to display");
             }
+            assert student != null;
             if (student.size() > 0) {
-                labelname.setText("Name:" + "\t\t\t\t\t" + student.get(0));
-                labelfname.setText("Father Name:" + "\t\t\t\t" + student.get(1));
-                labelphone.setText("Phone:" + "\t\t\t\t\t" + student.get(2));
-                labeladdress.setText("Address:" + "\t\t\t\t\t" + student.get(3));
-                labeldegree.setText("Degree:" + "\t\t\t\t\t" + student.get(4));
-                labelgender.setText("Gender:" + "\t\t\t\t\t" + student.get(5));
-                labelmail.setText("Email:" + "\t\t\t\t\t" + student.get(6));
-                labelcnic.setText("CNIC:" + "\t\t\t\t\t" + student.get(7));
-                labelDOB.setText("DOB:" + "\t\t\t\t\t" + student.get(8));
+                  labelname.setText("Name:" +      "\t\t\t\t\t" + student.get(0));
+                    labelfname.setText("Father Name:"  +    "\t\t\t\t" + student.get(1));
+                      labelphone.setText("Phone:" +           "\t\t\t\t\t" + student.get(2));
+                        labeladdress.setText("Address:" +           "\t\t\t\t\t" + student.get(3));
+                          labeldegree.setText("Degree:" +                 "\t\t\t\t\t" + student.get(4));
+                        labelgender.setText("Gender:" +             "\t\t\t\t\t" + student.get(5));
+                      labelmail.setText("Email:" +             "\t\t\t\t\t" + student.get(6));
+                    labelcnic.setText("CNIC:" +           "\t\t\t\t\t" + student.get(7));
+                  labelDOB.setText("DOB:" +        "\t\t\t\t\t" + student.get(8));
             }
         } else {
             display_error.setText("enter valid cnic");
         }
-
-
     }
 
 
