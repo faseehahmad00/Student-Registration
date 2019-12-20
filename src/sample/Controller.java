@@ -197,7 +197,7 @@ public class Controller {
             }
             assert student != null;
             if (student.size() > 0) {
-                display_error.setText("record found");
+                display_error.setText("(record found)");
                   labelname.setText("Name:" +      "\t\t\t\t\t" + student.get(0));
                     labelfname.setText("Father Name:"  +    "\t\t\t\t" + student.get(1));
                       labelphone.setText("Phone:" +           "\t\t\t\t\t" + student.get(2));
