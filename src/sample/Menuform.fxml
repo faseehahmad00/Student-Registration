@@ -62,5 +62,6 @@
             <FontAwesomeIcon fill="DARKORANGE" glyphName="LIST" layoutX="194.0" layoutY="129.0" size="70" wrappingWidth="70.0" />
          </children>
       </AnchorPane>
+      <Label fx:id="menu_error" layoutX="91.0" layoutY="664.0" prefHeight="35.0" prefWidth="389.0" textFill="DARKORANGE" />
     </children>
 </AnchorPane>

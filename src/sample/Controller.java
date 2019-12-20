@@ -10,7 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Controller {
 
@@ -24,7 +27,7 @@ public class Controller {
     @FXML
     private TextField username,name,fathername,email,phone,address,cnic,removeid,display_cnic;
     @FXML
-    private Label signup_error,registration_error,display_error,remove_error;
+    private Label signup_error,registration_error,display_error,remove_error,menu_error;
     @FXML
     private RadioButton male,female,bsse,bscs;
     @FXML
@@ -147,16 +150,16 @@ public class Controller {
             registration_error.setText("please fill all reqiured fields to continue");
         } else {
             if (cnic.getText().length() != 13) {
-                registration_error.setText("enter your cnic correctly without -.it must contain only 13 letters");
+                registration_error.setText("enter your cnic correctly without - .It must contain only 13 letters");
             } else {
                 database.insert(name.getText(), fathername.getText(), address.getText(), phone.getText()
                         , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
-
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
                     Main.primaryStage.setScene(new Scene(root));
                     Main.primaryStage.setFullScreen(true);
-                } catch (Exception ignored) {
+                } catch (IOException ignored) {
+
                 }
             }
         }
