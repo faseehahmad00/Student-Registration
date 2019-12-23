@@ -18,7 +18,6 @@ public class DataBase {
         }
     }
 
-//
     public void insert(String name,String fname,String address,String phone,String gender,String degree,
                        String email,String cnic,String DOB){
         try {
@@ -41,13 +40,9 @@ public class DataBase {
                     String.format(" VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s');"
                             , name, fname, phone, address, degree, gender, email, cnic, DOB));
 
-//             statement.execute("INSERT INTO student " +  "(name,fname) "+
-//                     "VALUES ('faseeh', 'Ahmad');");
-
         } catch (SQLException e) {
             System.out.println("The student details were not added to database.Make sure to enter all details correctly");
         }
-
     }
         public void delete(String cnic) {
         connect();
