@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+        import javafx.stage.StageStyle;
 
 public class Main extends Application {
     public static Stage primaryStage;
@@ -22,9 +22,8 @@ public class Main extends Application {
         primaryStage.setFullScreenExitHint("");
         primaryStage.setFullScreen(true);
     }
-    public static void main(String[] args) {
-        launch(args);
-    }
-
+//    public static void main(String[] args) {
+//        launch(args);
+//    }
 }
 

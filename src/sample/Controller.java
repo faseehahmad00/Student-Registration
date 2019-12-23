@@ -1,5 +1,4 @@
 package sample;
-
 import com.jfoenix.controls.JFXDatePicker;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -10,16 +9,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Controller {
-
     String gender;
     String degree;
     DataBase database = new DataBase();
+    @FXML
+    private AnchorPane anchorpane;
     @FXML
     JFXDatePicker datePicker;
     @FXML
@@ -39,8 +39,8 @@ public class Controller {
     }
 
     public void onclick() {
-        String passcode = "";
-        String username = "";
+        String passcode = "admin";
+        String username = "admin";
         if (passcode.equals(password.getText()) && username.equals(this.username.getText())) {
             System.out.println("login successful");
             signup_error.setText("login Successful");
@@ -131,19 +131,13 @@ public class Controller {
     }
 
     public void enrollstudent() {//on pressing save button on registration form.
-        if (male.isSelected()) {
-            gender = "male";
-        }
-        if (female.isSelected()) {
-            gender = "female";
-        }
-        if (bscs.isSelected()) {
-            degree = "BSCS";
-        }
-        if (bsse.isSelected()) {
-            degree = "BSSE";
-        }
-        //  ^^^ radio button functions...........
+        //radio button functions...........
+        if (male.isSelected())  {gender = "male"; }
+        if (female.isSelected()) { gender = "female"; }
+        if (bscs.isSelected()) { degree = "BSCS"; }
+        if (bsse.isSelected()) { degree = "BSSE"; }
+        
+
         if (fathername.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
                 || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
                 || degree.isEmpty() || gender.isEmpty() || fathername.getText().isEmpty()) {
@@ -197,22 +191,25 @@ public class Controller {
             }
             assert student != null;
             if (student.size() > 0) {
+                anchorpane.setVisible(true);
                 display_error.setText("(record found)");
-                  labelname.setText("Name:" +      "\t\t\t\t\t" + student.get(0));
-                    labelfname.setText("Father Name:"  +    "\t\t\t\t" + student.get(1));
-                      labelphone.setText("Phone:" +           "\t\t\t\t\t" + student.get(2));
-                        labeladdress.setText("Address:" +           "\t\t\t\t\t" + student.get(3));
-                          labeldegree.setText("Degree:" +                 "\t\t\t\t\t" + student.get(4));
-                        labelgender.setText("Gender:" +             "\t\t\t\t\t" + student.get(5));
-                      labelmail.setText("Email:" +             "\t\t\t\t\t" + student.get(6));
-                    labelcnic.setText("CNIC:" +           "\t\t\t\t\t" + student.get(7));
-                  labelDOB.setText("DOB:" +        "\t\t\t\t\t" + student.get(8));
+                labelname.setText("Name:" + "\t\t\t\t\t" + student.get(0));
+                labelfname.setText("Father Name:" + "\t\t\t\t" + student.get(1));
+                labelphone.setText("Phone:" + "\t\t\t\t\t" + student.get(2));
+                labeladdress.setText("Address:" + "\t\t\t\t\t" + student.get(3));
+                labeldegree.setText("Degree:" + "\t\t\t\t\t" + student.get(4));
+                labelgender.setText("Gender:" + "\t\t\t\t\t" + student.get(5));
+                labelmail.setText("Email:" + "\t\t\t\t\t" + student.get(6));
+                labelcnic.setText("CNIC:" + "\t\t\t\t\t" + student.get(7));
+                labelDOB.setText("DOB:" + "\t\t\t\t\t" + student.get(8));
             }
             else {
-                display_error.setText("Student not found.Enter registered CNIC");
+                display_error.setText("Student not found.Enter registered cnic");
+                  anchorpane.setVisible(false);
             }
         } else {
             display_error.setText("enter valid cnic");
+           anchorpane.setVisible(false);
         }
     }
 
