@@ -10,7 +10,7 @@ public class DataBase {
      */
     private void connect() {
         // SQLite connection string
-        String url = "jdbc:sqlite:C:/Users/fasee/IdeaProjects/untitled/studentregistration.db";
+        String url = "jdbc:sqlite:studentregistration.db";
         try {
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
