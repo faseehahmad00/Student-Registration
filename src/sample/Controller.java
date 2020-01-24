@@ -35,8 +35,9 @@ public class Controller {
 
 //LOGIN FORM START======================================================================================================
     public void onexitclick() {
-        Platform.exit();
         database.closeDB();
+        Platform.exit();
+
     }
 
     public void onclick() {
