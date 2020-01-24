@@ -39,6 +39,7 @@ public class DataBase {
                     " (name, fname , phone, address , degree , gender , email , cnic , DOB )" +
                     String.format(" VALUES ('%s','%s','%s','%s','%s','%s','%s','%s','%s');"
                             , name, fname, phone, address, degree, gender, email, cnic, DOB));
+            statement.close();
 
         } catch (SQLException e) {
             System.out.println("The student details were not added to database.Make sure to enter all details correctly");
@@ -49,6 +50,7 @@ public class DataBase {
             try {
                 Statement statement =  conn.createStatement();
                 statement.execute("DELETE FROM student WHERE cnic= "+cnic);
+                statement.close();
             } catch (SQLException e) {
                 System.out.println("unable to remove student");
             }
@@ -72,9 +74,17 @@ public class DataBase {
                     arr.add(rs.getString("email"));
                     arr.add(rs.getString("cnic"));
                     arr.add(rs.getString("DOB"));
+                    statement.close();
             } catch (SQLException ignored) {
             }
             return arr;
+        }
+        public void closeDB(){
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println("unable to close DB");
+            }
         }
 
 }

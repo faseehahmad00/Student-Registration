@@ -36,6 +36,7 @@ public class Controller {
 //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
+        database.closeDB();
     }
 
     public void onclick() {
@@ -115,6 +116,7 @@ public class Controller {
             Parent root = FXMLLoader.load(getClass().getResource("Signin.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
+            database.closeDB();
         } catch (Exception ignored) {
         }
     }

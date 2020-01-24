@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#deletestudent" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#deletestudent" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <AnchorPane layoutX="91.0" layoutY="225.0" prefHeight="312.0" prefWidth="292.0" style="-fx-background-color: black;">
          <children>
@@ -26,7 +26,7 @@
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
-        <JFXButton buttonType="RAISED" layoutX="1201.0" layoutY="8.0" onAction="#logout" prefHeight="39.0" prefWidth="85.0" ripplerFill="WHITE" style="-fx-background-color: #FF8C00;" text="Logout">
+        <JFXButton buttonType="RAISED" layoutX="1178.0" layoutY="8.0" onAction="#logout" prefHeight="39.0" prefWidth="137.0" ripplerFill="WHITE" style="-fx-background-color: #FF8C00;" text="Logout">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
