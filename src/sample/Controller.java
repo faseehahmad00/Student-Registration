@@ -10,7 +10,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -25,7 +24,7 @@ public class Controller {
     @FXML
     private PasswordField password;
     @FXML
-    private TextField username,name,fathername,email,phone,address,cnic,removeid,display_cnic;
+    private TextField username,name,fathername,email,phone,address,cnic,removeid,display_cnic,updatefield;
     @FXML
     private Label signup_error,registration_error,display_error,remove_error,menu_error;
     @FXML
@@ -35,7 +34,6 @@ public class Controller {
 
 //LOGIN FORM START======================================================================================================
     public void onexitclick() {
-        database.closeDB();
         Platform.exit();
 
     }
@@ -121,6 +119,9 @@ public class Controller {
         } catch (Exception ignored) {
         }
     }
+
+
+
 //MENU BAR END==========================================================================================================
 
 //REGISTRATION FORM START===============================================================================================
@@ -215,7 +216,6 @@ public class Controller {
            anchorpane.setVisible(false);
         }
     }
-
-
+    
 // Display FXML END====================================================================================================
 }

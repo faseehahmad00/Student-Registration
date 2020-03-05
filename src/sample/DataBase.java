@@ -1,4 +1,5 @@
 package sample;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -18,8 +19,8 @@ public class DataBase {
         }
     }
 
-    public void insert(String name,String fname,String address,String phone,String gender,String degree,
-                       String email,String cnic,String DOB){
+    public void insert(String name, String fname, String address, String phone, String gender, String degree,
+                       String email, String cnic, String DOB) {
         try {
             connect();
             Statement statement = conn.createStatement();
@@ -45,46 +46,47 @@ public class DataBase {
             System.out.println("The student details were not added to database.Make sure to enter all details correctly");
         }
     }
-        public void delete(String cnic) {
+
+    public void delete(String cnic) {
         connect();
-            try {
-                Statement statement =  conn.createStatement();
-                statement.execute("DELETE FROM student WHERE cnic= "+cnic);
-                statement.close();
-            } catch (SQLException e) {
-                System.out.println("unable to remove student");
-            }
-
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute("DELETE FROM student WHERE cnic= " + cnic);
+            statement.close();
+        } catch (SQLException e) {
+            System.out.println("unable to remove student");
         }
 
-        public ArrayList<String> display(String cnic)
-        {
-            ArrayList<String> arr = new ArrayList<>();
-            connect();
-            try {
-                Statement statement = conn.createStatement();
-                ResultSet rs = statement.executeQuery("SELECT name,fname,phone,address,degree,gender,email,cnic,DOB"
-                        + " FROM student WHERE cnic=" + cnic + ";");
-                    arr.add(rs.getString("name"));
-                    arr.add(rs.getString("fname"));
-                    arr.add(rs.getString("phone"));
-                    arr.add(rs.getString("address"));
-                    arr.add(rs.getString("degree"));
-                    arr.add(rs.getString("gender"));
-                    arr.add(rs.getString("email"));
-                    arr.add(rs.getString("cnic"));
-                    arr.add(rs.getString("DOB"));
-                    statement.close();
-            } catch (SQLException ignored) {
-            }
-            return arr;
+    }
+
+    public ArrayList<String> display(String cnic) {
+        ArrayList<String> arr = new ArrayList<>();
+        connect();
+        try {
+            Statement statement = conn.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT name,fname,phone,address,degree,gender,email,cnic,DOB"
+                    + " FROM student WHERE cnic=" + cnic + ";");
+            arr.add(rs.getString("name"));
+            arr.add(rs.getString("fname"));
+            arr.add(rs.getString("phone"));
+            arr.add(rs.getString("address"));
+            arr.add(rs.getString("degree"));
+            arr.add(rs.getString("gender"));
+            arr.add(rs.getString("email"));
+            arr.add(rs.getString("cnic"));
+            arr.add(rs.getString("DOB"));
+            statement.close();
+        } catch (SQLException ignored) {
         }
-        public void closeDB(){
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println("unable to close DB");
-            }
+        return arr;
+    }
+
+    public void closeDB() {
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("unable to close DB");
         }
+    }
 
 }
