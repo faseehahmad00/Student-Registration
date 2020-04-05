@@ -63,6 +63,5 @@
          </children>
       </AnchorPane>
       <Label fx:id="menu_error" layoutX="91.0" layoutY="664.0" prefHeight="35.0" prefWidth="389.0" textFill="DARKORANGE" />
-      <Button layoutX="972.0" layoutY="651.0" mnemonicParsing="false" text="update" />
     </children>
 </AnchorPane>

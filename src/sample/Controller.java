@@ -5,42 +5,38 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class Controller {
-    String gender;
-    String degree;
+
+public class Controller{
+
+
     DataBase database = new DataBase();
     @FXML
     private AnchorPane anchorpane;
-    @FXML
-    JFXDatePicker datePicker;
+
     @FXML
     private PasswordField password;
     @FXML
-    private TextField username,name,fathername,email,phone,address,cnic,removeid,display_cnic,updatefield;
+    private TextField username,removeid,display_cnic;
     @FXML
-    private Label signup_error,registration_error,display_error,remove_error,menu_error;
+    private Label signup_error,display_error,remove_error,menu_error;
     @FXML
-    private RadioButton male,female,bsse,bscs;
+    private RadioButton bsse,bscs;
     @FXML
     private Label labelname,labelfname,labelgender,labeldegree,labelphone,labelmail,labeladdress,labelcnic,labelDOB;
+
 
 //LOGIN FORM START======================================================================================================
     public void onexitclick() {
         Platform.exit();
-
     }
 
     public void onclick() {
-        String passcode = "admin";
-        String username = "admin";
+        String passcode = "";
+        String username = "";
         if (passcode.equals(password.getText()) && username.equals(this.username.getText())) {
             System.out.println("login successful");
             signup_error.setText("login Successful");
@@ -84,12 +80,14 @@ public class Controller {
 
 //MENU BAR START========================================================================================================
     public void addstudent() {
-        try {
+        try{
             Parent root = FXMLLoader.load(getClass().getResource("Registrationform.fxml"));
             Main.primaryStage.setScene(new Scene(root));
-            Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
+            Main.primaryStage.setFullScreen(true);}
+        catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
     public void deletestudent() {
@@ -97,16 +95,19 @@ public class Controller {
             Parent root = FXMLLoader.load(getClass().getResource("Delete.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
+        }         catch (Exception e){
+            e.printStackTrace();
         }
     }
+
 
     public void displaystudent() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Display.fxml"));
             Main.primaryStage.setScene(new Scene(root));
             Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
+        }         catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -123,47 +124,6 @@ public class Controller {
 
 
 //MENU BAR END==========================================================================================================
-
-//REGISTRATION FORM START===============================================================================================
-    public void oncancel() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
-            Main.primaryStage.setScene(new Scene(root));
-            Main.primaryStage.setFullScreen(true);
-        } catch (Exception ignored) {
-        }
-    }
-
-    public void enrollstudent() {//on pressing save button on registration form.
-        //radio button functions...........
-        if (male.isSelected())  {gender = "male"; }
-        if (female.isSelected()) { gender = "female"; }
-        if (bscs.isSelected()) { degree = "BSCS"; }
-        if (bsse.isSelected()) { degree = "BSSE"; }
-        
-
-        if (fathername.getText().isEmpty() || phone.getText().isEmpty() || datePicker.getValue().toString().isEmpty()
-                || cnic.getText().isEmpty() || email.getText().isEmpty() || address.getText().isEmpty()
-                || degree.isEmpty() || gender.isEmpty() || fathername.getText().isEmpty()) {
-            registration_error.setText("please fill all reqiured fields to continue");
-        } else {
-            if (cnic.getText().length() != 13) {
-                registration_error.setText("enter your cnic correctly without - .It must contain only 13 letters");
-            } else {
-                database.insert(name.getText(), fathername.getText(), address.getText(), phone.getText()
-                        , gender, degree, email.getText(), cnic.getText(), datePicker.getValue().toString());
-                try {
-                    Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
-                    Main.primaryStage.setScene(new Scene(root));
-                    Main.primaryStage.setFullScreen(true);
-                } catch (IOException ignored) {
-
-                }
-            }
-        }
-    }
-
-//REGISTRATION FORM END=================================================================================================
 
 //REMOVE FXML START=====================================================================================================
     public void removestudent() {
@@ -182,6 +142,7 @@ public class Controller {
 
         }
     }
+
 
 //REMOVE FXML END=======================================================================================================
 //Display FXML START====================================================================================================
@@ -216,6 +177,15 @@ public class Controller {
            anchorpane.setVisible(false);
         }
     }
-    
+
+    public void oncancel() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("Menuform.fxml"));
+            Main.primaryStage.setScene(new Scene(root));
+            Main.primaryStage.setFullScreen(true);
+        } catch (Exception ignored) {
+        }
+    }
+
 // Display FXML END====================================================================================================
 }
